@@ -1,9 +1,38 @@
 body {
-    overflow-y: hidden; /* Hide vertical scrollbar */
+    /* overflow-y: hidden; Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-color: #001a33;;
   }
-  
+.heading{
+    font-size: 50px;
+    font-weight: 10;
+    margin-left: 20%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 
+}
+.sub-heading{
+    font-family: 'Butterfly Kids', cursive;
+    margin-left: 22%;
+}
+.btn-outline-info{
+    display: inline;
+    transition: transform .2s;
+}
+.btn-outline-info:hover{
+    color: white;
+    background-color: #10385c;
+    outline: white;
+    transform: scale(1.1);
+}
+.car-img{
+    margin-top: 5%;
+    left: 0;
+}
+.car-img-2{
+    top: 0;
+    left: 0;
+    height: 300px;
+}
 .loader-container{
     width: 100%;
     height: 100vh;
