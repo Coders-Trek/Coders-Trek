@@ -4,8 +4,8 @@ body {
     background-color: #001a33;;
   }
 .heading{
-    font-size: 50px;
-    font-weight: 10;
+    font-size: 80px;
+    font-weight: 20;
     margin-left: 20%;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 
@@ -13,6 +13,7 @@ body {
 .sub-heading{
     font-family: 'Butterfly Kids', cursive;
     margin-left: 22%;
+    font-size: 20px;
 }
 .btn-outline-info{
     display: inline;
@@ -33,6 +34,203 @@ body {
     left: 0;
     height: 300px;
 }
+
+
+#wel-1{
+    position: relative;
+    left: 36%;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#wel-2{
+    position: relative;
+    left: 39%;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#wel-3{
+    position: relative;
+    left: 40%;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#start{
+    font-size: 30px;
+    font-weight: 15;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 28%;
+}
+
+#form-sign{
+    width: 50%;
+    position: relative; 
+    background-color: #0a56a1;
+    border-radius: 10px;
+    margin-top: 60px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+
+#form-sign h1{
+    text-align: center;
+}
+
+label{
+    padding-left: 20px;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #f5e0e0;
+}
+
+input[type=email], input[type=password], input[type=text] {
+    width: 85%;
+    padding: 12px 5px;
+    margin: 12px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#form-login{
+    width: 50%;
+    position: relative; 
+    background-color: #0a56a1;
+    border-radius: 10px;
+    margin-top: 60px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+
+#form-login h1{
+    text-align: center;
+}
+
+#signup_button{
+    margin-top: 30px;
+    position: relative;
+    left: 40%;
+    padding: 10px 35px;
+    font-weight: 50;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #0eb353;
+    color: black;
+    border-radius: 10px;
+}
+
+#signup_button:hover{
+    background-color: #12f872;
+}
+
+#login_button{
+    margin-top: 30px;
+    position: relative;
+    left: 40%;
+    padding: 10px 35px;
+    font-weight: 50;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #0eb353;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#login_button:hover{
+    background-color: #12f872;
+}
+
+#close{
+    color: wheat;
+}
+
+#close:hover{
+    cursor: pointer;
+}
+
+#head{
+    color: white;
+    text-align: center;
+    font-size:50px;
+    font-weight: 40;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#sub-head{
+    color: white;
+    text-align: center;
+    font-size:20px;
+    font-weight: 20;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cards{
+    height: 320px;
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 10px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    transition: transform .3s;
+}
+
+.cards:hover{
+    cursor: pointer;
+    background-color: #022f5a;
+    transform: scale(1.1);
+}
+
+#card-icon{
+    color: white;
+    justify-content: center;
+    position: relative;
+    left: 35%;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: 1px solid white;
+    border-radius: 80%;
+}
+
+#card-head{
+    color: white;
+    text-align: center;
+    font-size:30px;
+    font-weight: 20;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#card-text{
+    color: white;
+    text-align: center;
+    font-size:18px;
+    font-weight: 6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contact-form{
+    position: relative;
+    margin-top: 350px;
+    width: 60%;
+    left: 20%;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+#contact-form h1{
+    color: white;
+    text-align: center;
+}
+
 .loader-container{
     width: 100%;
     height: 100vh;
@@ -53,6 +251,26 @@ body {
     animation: loader 1.3s linear infinite;
 }
 
+#right{
+    margin-top: 60px;
+    margin-right: 10px;
+    float: right;
+    width: 67%;
+}
+
+#contact_button{
+    margin-top: 30px;
+    position: relative;
+    left: 40%;
+    padding: 10px 35px;
+    font-weight: 50;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
 @keyframes loader{
     25%{
         color: #2ecc71;
@@ -67,3 +285,25 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #10385c;; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #265e8f; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #205c91; 
+  }
