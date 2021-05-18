@@ -21,6 +21,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css">
+
+
+    <script src="https://kit.fontawesome.com/c23041b8ac.js" crossorigin="anonymous"></script>
+
     <!--CSS Files-->
     <link rel="stylesheet" href="../static/css/home.css">
 
@@ -42,8 +47,8 @@
                 Home
             </a>
             <form class="d-flex">
-                <a id="login" class="btn btn-outline-info me-3">Log In</a>
-                <a id="signup" class="btn btn-outline-info" >Sign In</a>
+                <a id="login" class="btn btn-outline-info me-3" onclick="showDiv2()">Log In</a>
+                <a id="signup" class="btn btn-outline-info" onclick="showDiv()">Sign In</a>
             </form>
         </div>
     </nav>
@@ -53,27 +58,208 @@
         <div class="col-6 ps-5" style="color: white;">
             <span class="heading">CODERS</span> <br>
             <span class="heading">TREK</span> <br>
-            <span class="sub-heading">Home for Your Programming Journey</span>
+            <span class="sub-heading">Home for Your Programming Journey</span><br><br><br>
+            <a id="start" class="btn btn-outline-info" >Get Started</a>
             
         </div>
         <div class="col-6 car-img">
-            <img class="img-fluid" src="../static/images/1.1.png" alt="header">
+            <div class="item-group" xyz="fade down-100% back-5 flip-right delay-5">
+                <img class="img-fluid square xyz-in" src="../static/images/1.1.png" alt="header">
+            </div>
         </div>
         <img class="car-img-2" src="../static/images/3.1.png" alt="">
     </div>
-    <br>
+    <br><br>
 
-    <center><h1 style="color: white;">WELCOME</h1></center>
+    <!--Welcome Section-->
+    <center><h1 id="head">WELCOME</h1></center>
     <br> <br>
 
-    <div class="container" style="color: white;font-weight:bolder;font-size:large;font-family:'Times New Roman', Times, serif">
-        Coders Trek is a application that works for you and your team to help you catch up your progress
-        in your programming trek and help you team up and show detailed analytics
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="text-center">
+                    <img class="rounded" style="position:absolute;left:2%;" width="250px" height="250px" src="../static/images/4.png" alt="icon">
+                    <p id="right" style="color: white;font-weight:bolder;font-size:20px;font-family:'Times New Roman', Times, serif">Coders Trek is a application that works for you and your team to help you catch up your progress
+                        in your programming trek and help you team up and show detailed analytics. So Start your Trek right
+                        now using our user friendly service and get to know about your hidden programming power and earn different
+                        rewards by compete with your friends and make progress by taking up challenges with other teams which are
+                        on trek with you.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <br><br><br>
 
+    <div class="container" id="get-start">
+        <a id="wel-1" class="btn btn-outline-info" onclick="showDiv2()">Log In</a>
+        <a id="wel-2" class="btn btn-outline-info" onclick="showDiv()">Sign In</a>
+        <br><br>
+        <a id="wel-3" class="btn btn-outline-info">Contact US</a>
+    </div>
+
+    <br><br><br>
+
+
+    <!--Features Section-->
+    <div class="container">
+        <h1 id="head">Our Features</h1>
+        <p id="sub-head">Get to know more about us...</p>
+    </div>
+
+    <br><br>
+
+
+    <!--Features Cards-->
+    <div class="container mb-5">
+        <div class="cards">
+            <i id="card-icon" class="fas fa-users fa-3x"></i>
+            <h3 id="card-head">Team Work</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">Team up with other programmers and help team mates
+                in your programming trek and show up.</p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-chart-line fa-3x"></i>
+            <h3 id="card-head">Detailed Analytics</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">Get detailed analytics about your progress. 
+                Get personal and team analytics in a interactive and simple way. </p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-robot fa-3x"></i>
+            <h3 id="card-head">Never Fell Alone</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">With our special Programming friendly UI,
+                 you also get to know about latest updares with our user-friendly chatbot for free.</p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-laptop-code fa-3x"></i>
+            <h3 id="card-head">Code Like Pro</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">Our Application also comes with a interactive Coding IDE made for you
+                so that you can practice and test your code at no wait for free.</p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-chalkboard-teacher fa-3x"></i>
+            <h3 id="card-head">Latest Updates</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">By using our service, you get latest updates from programming world.
+                You get to know about latest code articles, hackathones etc..</p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-trophy fa-3x"></i>
+            <h3 id="card-head">Get Rewards</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">Team Up and unite to top up the table and get amazing rewards for
+                your hardwork and consistency. Furthur share up with others using social platforms.</p>
+        </div>
+    </div>
+
+
+    <!--Reason to choose-->
+    <br><br>
+    <div class="container mt-5">
+        <h1 id="head">Why Start Your Trek With us</h1>
+        <p id="sub-head">Here are some main prevailing reasons to choose us for your programming
+            trek over others and some major factors...
+        </p>
+    </div>
+    <br><br>
+    <div class="container mt-5 mb-5">
+        <div class="cards">
+            <i id="card-icon" class="fas fa-bolt fa-3x"></i>
+            <h3 id="card-head">Powerful Features</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">We provide you with rich and powerfull feature to help
+                you easily start your programming journey and become a pro coder.</p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-keyboard fa-3x"></i>
+            <h3 id="card-head">For Coders</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">An Application totally built keeping in mind the 
+                need of a coder and according to the latest standards in programming world to help you 
+                perform better.</p>
+        </div>
+        <div class="cards">
+            <i id="card-icon" class="fas fa-headset fa-3x"></i>
+            <h3 id="card-head">Full Support</h3>
+            <hr style="color: antiquewhite;">
+            <p id="card-text">Our user focused teams works around only for you and 
+                takes reviews from you and tries up best to improve the apllication as per latest standards.</p>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="container mt-5">
+        <form action="#" id="contact-form">
+            <h1>Contact US</h1>
+            <hr style="color: white;height:5px;">
+            <label for="name"><i class="fas fa-user"></i><strong> Name</strong></label><br>
+            <input type="text" id="fname" placeholder="Enter Name" name="name" required>
+            <br>
+            <label for="email"><i class="fas fa-envelope"></i><strong> E-mail</strong></label><br>
+            <input type="text" id="email" placeholder="Enter E-mail" name="email" required>
+            <br>
+            <label for="message"><i class="fas fa-envelope"></i><strong> Message</strong></label><br>
+            <textarea name="message" placeholder="Enter Message" id="messagw" cols="40" rows="4" style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
+            <br>
+            <button id="contact_button" class="btn btn-info" type="submit"> Send</button>
+            <br>
+        </form>
+    </div>
+    
+
+    
+    <!--Sign  In Form-->
+    <div class="container" id="form-sign">
+        <form class="needs-validation" action="#">
+            <i id="close" class="far fa-times-circle fa-2x" onclick="closeDiv()"></i>
+            <h1 style="color: white;">SIGN IN</h1>
+            <hr style="color: white;height:5px;">
+            <label for="fname"><i class="fas fa-user"></i><strong> First Name</strong></label><br>
+            <input type="text" id="fname" placeholder="Enter First Name" name="name" required>
+            <br>
+            <label for="lname"><i class="fas fa-user"></i><strong> Last Name</strong></label><br>
+            <input type="text" id="lname" placeholder="Enter Last Name" name="name" required>
+            <br>
+            <label for="signup_email"><i class="fas fa-envelope"></i><strong> E-mail</strong></label><br>
+            <input type="text" id="signup_email" placeholder="Enter E-mail" name="signup_email" required>
+            <br>
+            <label for="signup_password"><i class="fas fa-lock"></i><strong> Password</strong></label><br>
+            <input type="password" id="signup_password" placeholder="Enter Password" name="signup_password" required>
+            
+            <button id="signup_button" class="btn btn-success" type="submit"> Sign In</button>
+        </form>
+    </div>
+
+
+    <!--Log  In Form-->
+    <div class="container" id="form-login">
+        <form class="needs-validation" action="#">
+            <i id="close" class="far fa-times-circle fa-2x" onclick="closeDiv2()"></i>
+            <h1 style="color: white;">Log In</h1>
+            <hr style="color: white;height:5px;">
+            <br>
+            <label for="login_email"><i class="fas fa-envelope"></i><strong> E-mail</strong></label><br>
+            <input type="text" id="login_email" placeholder="Enter E-mail" name="signup_email" required>
+            <br>
+            <label for="login_password"><i class="fas fa-lock"></i><strong> Password</strong></label><br>
+            <input type="password" id="login_password" placeholder="Enter Password" name="signup_password" required>
+            <br>
+            <input style="margin-left:15px;position:relative;margin-top:7px;" id="remember" type="checkbox" value="Remember Me">
+            <label for="remember">Remember Me</label><br>
+            <button id="login_button" class="btn btn-success" type="submit"> Log In</button>
+        </form>
+    </div>
+
+    <br><br><br>
 
     <!--JS Files-->
     <script src="../static/js/loader.js"></script>
+    <script src="../static/js/home.js"></script>
 </body>
 </html>
