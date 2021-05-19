@@ -53,14 +53,6 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#wel-3{
-    position: relative;
-    left: 40%;
-    font-size: 30px;
-    font-weight: bolder;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 .wel-buttons{
     position: absolute;
     left: 50%;
