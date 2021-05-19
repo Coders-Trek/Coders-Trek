@@ -238,7 +238,7 @@ input[type=email], input[type=password], input[type=text] {
 
 #contact-form{
     position: relative;
-    margin-top: 350px;
+    margin-top: 50px;
     width: 60%;
     left: 20%;
     border: 1px solid white;
