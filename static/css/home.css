@@ -12,7 +12,7 @@ body {
 }
 .sub-heading{
     font-family: 'Butterfly Kids', cursive;
-    margin-left: 22%;
+    margin-left: 24%;
     font-size: 20px;
 }
 .btn-outline-info{
@@ -33,6 +33,7 @@ body {
     top: 0;
     left: 0;
     height: 300px;
+    width: 100%;
 }
 
 
@@ -60,11 +61,23 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.wel-buttons{
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: 'Butterfly Kids', cursive;
+}
+
+.wel-sub-buttons{
+    font-size: 28px;
+}
+
 #start{
     font-size: 30px;
-    font-weight: 15;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-left: 28%;
+    font-weight: 10;
+    font-family: 'Butterfly Kids', cursive;
+    margin-left: 24%;
 }
 
 #form-sign{
@@ -156,13 +169,23 @@ input[type=email], input[type=password], input[type=text] {
 #close:hover{
     cursor: pointer;
 }
+.welcome{
+    text-align: center;
+    /* margin-right: 20%; */
+}
 
 #head{
     color: white;
-    text-align: center;
-    font-size:50px;
+    text-align: right;
+    font-size: 60px;
     font-weight: 40;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.custom{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #sub-head{
@@ -173,15 +196,19 @@ input[type=email], input[type=password], input[type=text] {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
 .cards{
     height: 320px;
-    width: 30%;
-    border: 2px solid white;
+    width: 100%;
+    overflow-y: auto;
     border-radius: 10px;
     float: left;
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #001a33;
+    text-align: center;
     transition: transform .3s;
+    box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cards:hover{
@@ -194,11 +221,11 @@ input[type=email], input[type=password], input[type=text] {
     color: white;
     justify-content: center;
     position: relative;
-    left: 35%;
+    /* left: 40%; */
     padding: 10px 10px;
     margin: 10px 10px;
     border: 1px solid white;
-    border-radius: 80%;
+    border-radius: 100%;
 }
 
 #card-head{
@@ -251,11 +278,25 @@ input[type=email], input[type=password], input[type=text] {
     animation: loader 1.3s linear infinite;
 }
 
+.rounded{
+    /* position: absolute; */
+    left: -1%;
+    /* top: 165%; */
+    width: 500px;
+    height: 550px;
+}
+
 #right{
-    margin-top: 60px;
-    margin-right: 10px;
-    float: right;
-    width: 67%;
+    margin-top: 100px;
+    margin-right: 50px;
+    /* float: right; */
+    /* width: 50%; */
+    color: white;
+    font-weight: lighter;
+    font-size:24px;
+    text-align: justify;
+    font-family: 'Butterfly Kids', cursive;
+    padding-bottom: 100px;
 }
 
 #contact_button{
