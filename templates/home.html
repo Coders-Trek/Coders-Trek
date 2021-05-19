@@ -59,7 +59,9 @@
             <span class="heading">CODERS</span> <br>
             <span class="heading">TREK</span> <br>
             <span class="sub-heading">Home for Your Programming Journey</span><br><br><br>
-            <a id="start" class="btn btn-outline-info" >Get Started</a>
+            <form class="d-flex">
+                <a id="start" class="btn btn-outline-info">Get Started</a>
+            </form>
             
         </div>
         <div class="col-6 car-img">
@@ -72,39 +74,44 @@
     <br><br>
 
     <!--Welcome Section-->
-    <center><h1 id="head">WELCOME</h1></center>
+    <div class="welcome">
+        <span id="head">WELCOME</span>
+    </div>
     <br> <br>
 
 
-    <div class="container">
         <div class="row align-items-center">
-            <div class="col">
-                <div class="text-center">
-                    <img class="rounded" style="position:absolute;left:2%;" width="250px" height="250px" src="../static/images/4.png" alt="icon">
-                    <p id="right" style="color: white;font-weight:bolder;font-size:20px;font-family:'Times New Roman', Times, serif">Coders Trek is a application that works for you and your team to help you catch up your progress
-                        in your programming trek and help you team up and show detailed analytics. So Start your Trek right
-                        now using our user friendly service and get to know about your hidden programming power and earn different
-                        rewards by compete with your friends and make progress by taking up challenges with other teams which are
-                        on trek with you.</p>
-                </div>
+            <div class="col-6 col-md-6 col-sm-12">
+                    <img class="rounded" src="../static/images/4.png" alt="icon">
+            </div>
+            <div class="col-6 col-md-6 col-sm-12">
+                <p id="right">Coders Trek is a application that works for you and your team to help you catch up your progress
+                    in your programming trek and help you team up and show detailed analytics. So Start your Trek right
+                    now using our user friendly service and get to know about your hidden programming power and earn different
+                    rewards by compete with your friends and make progress by taking up challenges with other teams which are
+                    on trek with you.
+                </p>
             </div>
         </div>
-    </div>
     <br><br><br>
 
     <div class="container" id="get-start">
-        <a id="wel-1" class="btn btn-outline-info" onclick="showDiv2()">Log In</a>
-        <a id="wel-2" class="btn btn-outline-info" onclick="showDiv()">Sign In</a>
-        <br><br>
-        <a id="wel-3" class="btn btn-outline-info">Contact US</a>
+        <form class="d-flex wel-buttons">
+            <a class="btn btn-outline-info me-3 wel-sub-buttons" onclick="showDiv2()">Log In</a>
+            <a class="btn btn-outline-info wel-sub-buttons" onclick="showDiv()">Sign In</a>
+        </form>
+            <br>
+        <form class="d-flex wel-buttons mt-5 pt-2">
+            <a class="btn btn-outline-info wel-sub-buttons">Contact US</a>
+        </form>
     </div>
 
     <br><br><br>
 
 
     <!--Features Section-->
-    <div class="container">
-        <h1 id="head">Our Features</h1>
+    <div class="container welcome mt-5 pt-5">
+        <span id="head">Our Features</span>
         <p id="sub-head">Get to know more about us...</p>
     </div>
 
@@ -112,104 +119,130 @@
 
 
     <!--Features Cards-->
-    <div class="container mb-5">
-        <div class="cards">
-            <i id="card-icon" class="fas fa-users fa-3x"></i>
-            <h3 id="card-head">Team Work</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">Team up with other programmers and help team mates
-                in your programming trek and show up.</p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-chart-line fa-3x"></i>
-            <h3 id="card-head">Detailed Analytics</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">Get detailed analytics about your progress. 
-                Get personal and team analytics in a interactive and simple way. </p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-robot fa-3x"></i>
-            <h3 id="card-head">Never Fell Alone</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">With our special Programming friendly UI,
-                 you also get to know about latest updares with our user-friendly chatbot for free.</p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-laptop-code fa-3x"></i>
-            <h3 id="card-head">Code Like Pro</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">Our Application also comes with a interactive Coding IDE made for you
-                so that you can practice and test your code at no wait for free.</p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-chalkboard-teacher fa-3x"></i>
-            <h3 id="card-head">Latest Updates</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">By using our service, you get latest updates from programming world.
-                You get to know about latest code articles, hackathones etc..</p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-trophy fa-3x"></i>
-            <h3 id="card-head">Get Rewards</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">Team Up and unite to top up the table and get amazing rewards for
-                your hardwork and consistency. Furthur share up with others using social platforms.</p>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-users fa-3x"></i>
+                    <h3 id="card-head">Team Work</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">Team up with other programmers and help team mates
+                        in your programming trek and show up.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-chart-line fa-3x"></i>
+                    <h3 id="card-head">Detailed Analytics</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">Get detailed analytics about your progress. 
+                        Get personal and team analytics in a interactive and simple way. </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-robot fa-3x"></i>
+                    <h3 id="card-head">Never Fell Alone</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">With our special Programming friendly UI,
+                        you also get to know about latest updares with our user-friendly chatbot for free.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-laptop-code fa-3x"></i>
+                    <h3 id="card-head">Code Like Pro</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">Our Application also comes with a interactive Coding IDE made for you
+                        so that you can practice and test your code at no wait for free.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-chalkboard-teacher fa-3x"></i>
+                    <h3 id="card-head">Latest Updates</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">By using our service, you get latest updates from programming world.
+                        You get to know about latest code articles, hackathones etc..</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-trophy fa-3x"></i>
+                    <h3 id="card-head">Get Rewards</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">Team Up and unite to top up the table and get amazing rewards for
+                        your hardwork and consistency. Furthur share up with others using social platforms.</p>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <!--Reason to choose-->
     <br><br>
-    <div class="container mt-5">
-        <h1 id="head">Why Start Your Trek With us</h1>
+    <div class="container welcome mt-5 pt-2">
+        <span id="head">Why Start Your Trek With us</span>
         <p id="sub-head">Here are some main prevailing reasons to choose us for your programming
             trek over others and some major factors...
         </p>
     </div>
-    <br><br>
-    <div class="container mt-5 mb-5">
-        <div class="cards">
-            <i id="card-icon" class="fas fa-bolt fa-3x"></i>
-            <h3 id="card-head">Powerful Features</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">We provide you with rich and powerfull feature to help
-                you easily start your programming journey and become a pro coder.</p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-keyboard fa-3x"></i>
-            <h3 id="card-head">For Coders</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">An Application totally built keeping in mind the 
-                need of a coder and according to the latest standards in programming world to help you 
-                perform better.</p>
-        </div>
-        <div class="cards">
-            <i id="card-icon" class="fas fa-headset fa-3x"></i>
-            <h3 id="card-head">Full Support</h3>
-            <hr style="color: antiquewhite;">
-            <p id="card-text">Our user focused teams works around only for you and 
-                takes reviews from you and tries up best to improve the apllication as per latest standards.</p>
+    <br>
+    <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-bolt fa-3x"></i>
+                    <h3 id="card-head">Powerful Features</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">We provide you with rich and powerfull feature to help
+                        you easily start your programming journey and become a pro coder.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-keyboard fa-3x"></i>
+                    <h3 id="card-head">For Coders</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">An Application totally built keeping in mind the 
+                        need of a coder and according to the latest standards in programming world to help you 
+                        perform better.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <div class="cards">
+                    <i id="card-icon" class="fas fa-headset fa-3x"></i>
+                    <h3 id="card-head">Full Support</h3>
+                    <hr style="color: antiquewhite;">
+                    <p id="card-text">Our user focused teams works around only for you and 
+                        takes reviews from you and tries up best to improve the apllication as per latest standards.</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <br><br><br>
+    <br>
 
     <div class="container mt-5">
-        <form action="#" id="contact-form">
-            <h1>Contact US</h1>
-            <hr style="color: white;height:5px;">
-            <label for="name"><i class="fas fa-user"></i><strong> Name</strong></label><br>
-            <input type="text" id="fname" placeholder="Enter Name" name="name" required>
-            <br>
-            <label for="email"><i class="fas fa-envelope"></i><strong> E-mail</strong></label><br>
-            <input type="text" id="email" placeholder="Enter E-mail" name="email" required>
-            <br>
-            <label for="message"><i class="fas fa-envelope"></i><strong> Message</strong></label><br>
-            <textarea name="message" placeholder="Enter Message" id="messagw" cols="40" rows="4" style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
-            <br>
-            <button id="contact_button" class="btn btn-info" type="submit"> Send</button>
-            <br>
-        </form>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-lg-center justify-content-xl-start">
+                <form action="#" id="contact-form" style="width: 50%;">
+                    <h1>Contact US</h1>
+                    <hr style="color: white;height:5px;">
+                    <label for="name"><i class="fas fa-user"></i><strong> Name</strong></label><br>
+                    <input type="text" id="fname" placeholder="Enter Name" name="name" required>
+                    <br>
+                    <label for="email"><i class="fas fa-envelope"></i><strong> E-mail</strong></label><br>
+                    <input type="text" id="email" placeholder="Enter E-mail" name="email" required>
+                    <br>
+                    <label for="message"><i class="fas fa-envelope"></i><strong> Message</strong></label><br>
+                    <textarea name="message" placeholder="Enter Message" id="messagw" cols="40" rows="4" style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
+                    <br>
+                    <button id="contact_button" class="btn btn-info" type="submit"> Send</button>
+                    <br>
+                </form>
+            </div>
+        </div>
     </div>
     
 
