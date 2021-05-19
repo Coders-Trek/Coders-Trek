@@ -226,11 +226,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-lg-center justify-content-xl-start">
-                <form action="#" id="contact-form" style="width: 50%;">
+                <form action="#" id="contact-form">
                     <h1>Contact US</h1>
                     <hr style="color: white;height:5px;">
                     <label for="name"><i class="fas fa-user"></i><strong> Name</strong></label><br>
-                    <input type="text" id="fname" placeholder="Enter Name" name="name" required>
+                        <input type="text" id="fname" placeholder="Enter Name" name="name" required>
                     <br>
                     <label for="email"><i class="fas fa-envelope"></i><strong> E-mail</strong></label><br>
                     <input type="text" id="email" placeholder="Enter E-mail" name="email" required>
@@ -238,7 +238,9 @@
                     <label for="message"><i class="fas fa-envelope"></i><strong> Message</strong></label><br>
                     <textarea name="message" placeholder="Enter Message" id="messagw" cols="40" rows="4" style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
                     <br>
-                    <button id="contact_button" class="btn btn-info" type="submit"> Send</button>
+                    <div style="text-align: center;">
+                        <button id="contact_button" class="btn btn-info" type="submit"> Send</button>
+                    </div>
                     <br>
                 </form>
             </div>
