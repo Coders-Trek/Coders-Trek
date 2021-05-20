@@ -285,7 +285,7 @@
             <label for="signup_password"><i class="fas fa-lock"></i><strong> Password</strong></label><br>
             <input type="password" id="signup_password" placeholder="Enter Password" name="signup_password" required>
             
-            <button id="signup_button" class="btn btn-success" type="submit"> Sign In</button>
+            <button id="signup_button" class="btn btn-success" onclick="showOTP()" type="submit"> Sign In</button>
         </form>
     </div>
 
@@ -306,6 +306,21 @@
             <input style="margin-left:15px;position:relative;margin-top:7px;" id="remember" type="checkbox" value="Remember Me">
             <label for="remember">Remember Me</label><br>
             <button id="login_button" class="btn btn-success" type="submit"> Log In</button>
+        </form>
+    </div>
+
+    <!--OTP Form-->
+    <div class="container" id="form-otp">
+        <form class="needs-validation" action="#">
+            <i id="close" class="far fa-times-circle fa-2x" onclick="closeDiv3()"></i>
+            <h1 style="color: white;">Enter OTP</h1>
+            <p style="color: white;margin-top:10px;text-align:center">An OTP is sent on your given Email ID</p>
+            <hr style="color: white;height:5px;">
+            <br>
+            <label for="otp"><i class="fas fa-user"></i><strong> OTP</strong></label><br>
+            <input type="password" id="login_email" placeholder="Enter OTP" name="otp" required>
+            <br>
+            <button id="login_button" class="btn btn-success" type="submit">Submit</button>
         </form>
     </div>
 
