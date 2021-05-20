@@ -119,6 +119,21 @@ input[type=email], input[type=password], input[type=text] {
     text-align: center;
 }
 
+#form-otp{
+    width: 50%;
+    position: relative; 
+    background-color: #0a56a1;
+    border-radius: 10px;
+    margin-top: 60px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+
+#form-otp h1{
+    text-align: center;
+}
+
 #signup_button{
     margin-top: 30px;
     position: relative;
