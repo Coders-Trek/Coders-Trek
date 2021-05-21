@@ -31,8 +31,10 @@
     <link rel="stylesheet" href="../static/css/main.css">
 
     <title>Coders Trek Home</title>
+
 </head>
-<body>
+
+<body style="background-color:#191927;">
 
     <!--Loader-->
     <div class="loader-container">
@@ -40,19 +42,43 @@
     </div>
 
     <!--Navbar Horizontal-->
-    <nav class="navbar fixed-top navbar-light" style="background-color: #092742;">
+    <nav id="hnav" class="navbar fixed-top navbar-light" style="background-color: #092742;">
         <div class="container-fluid justify-content-start">
             <i id="list" class="bi bi-list"></i>
-            <h3 class="me-5" style="color: white;">Coders Trek</h3>
+            <h3 class="me-5" style="color: white;margin-left:10px;">Coders Trek</h3>
             <form class="d-flex ms-5" style="position: relative;">
                 <label for="search" class="bi bi-search sspan"></label>
                 <input class="form-control me-2" name="search" id="search" type="search" aria-label="Search">
             </form>
-            <i class="bi bi-code-slash"></i>
+            <i class="bi bi-disc-fill ms-3 activity"></i>
+            <i class="bi bi-envelope-open-fill noti"></i>
+            <i class="bi bi-grid-fill app"></i>
+            <div class="v1 me-3"></div>
+            <div id="profile">
+                <img id="avatar" src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Brown'/>
+                <div class="ms-3" id="user-name">Pro Coder</div>
+            </div>
         </div>
     </nav>
 
+    <br>
+    <!--Vertical Navbar-->
+    <div class="vertical-nav mt-5">
+            <a href="#"><i class="fas fa-home nav-icon active"></i><span class="nav-head active"> Dashboard</span></a><br>
+            <a href="#"><i class="fas fa-users nav-icon"></i><span class="nav-head"> Teams</span></a><br>
+            <a href="#"><i class="fas fa-tasks nav-icon"></i><span class="nav-head"> Tasks</span></a><br>
+            <a href="#"><i class="fas fa-rss nav-icon"></i><span class="nav-head"> Feeds</span></a><br>
+            <a href="#"><i class="fas fa-chart-bar nav-icon"></i><span class="nav-head"> Analytics</span></a>
+    </div>
+
+
+    <!--Main Content-->
+    <div class="main">
+        <h4>Hi, Pro Coder</h4>
+    </div>
+
     <!--JS Files-->
     <script src="../static/js/loader.js"></script> 
+    <script src="../static/js/main.js"></script>
 </body>
 </html>
