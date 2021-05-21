@@ -8,32 +8,52 @@
     border-radius: 5px;
     padding-right: 5px;
     background-color: #1a4c79;
-    box-shadow: 2px 3px 2px 3px #11304b;
-    transition: transform .1s;
+    transition: transform .2s;
 }
 #list:hover{
     cursor: pointer;
-    transform: scale(1.1);
+    background-color: #123f66;
+}
+
+/* search bar */
+.search-bar{
+    position: relative;
+    width: 500px;
+    margin-left: 100px;
+    top: 4%;
 }
 
 #search{
     background-color: #1a4c79;
-    width: 600px;
-    padding-left: 26px;
+    width: 100%;
+    left: 40%;
+    border: none;
+    transform: translate(-50% 0%);
+
 }
 
 #search:focus{
     background-color: aliceblue;
-    
 }
-
 
 .sspan {
     color: #0e82e7;
     font-size: 1rem;
     position: absolute;
     left: 7px;
-    top: calc(50% - 0.6em);
+    top: calc(50% - 0.75em);
+    padding: 0 10px;
+}
+
+
+/* nav bar */
+.nav-text{
+    color: white;
+    left: 50%;
+    transform: translate(0%, 10%);
+    text-align: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 30px;
 }
 
 .loader-container{
@@ -57,22 +77,19 @@
 }
 
 .rounded{
-    /* position: absolute; */
     left: -1%;
-    /* top: 165%; */
     width: 500px;
     height: 550px;
 }
 
 
 .activity{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: white;
     margin-left: 20px;
     background-color:#205c91;
     border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0px 6px;
 }
 
 .activity:hover{
@@ -81,13 +98,12 @@
 }
 
 .noti{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: white;
     margin-left: 20px;
     background-color:#205c91;
     border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0px 6px;
 }
 
 .noti:hover{
@@ -96,13 +112,12 @@
 }
 
 .app{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: white;
     margin-left: 20px;
     background-color:#205c91;
     border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0px 6px;
 }
 
 .app:hover{
@@ -111,34 +126,29 @@
 }
 
 .v1 {
-    margin-left: 50px;
-    border-left: 2px solid white;
-    height: 40px;
+    margin-left: 20px;
+    border-left: 1px solid white;
+    height: 50px;
   }
 
+/* avatar */
 #avatar{
-    width:  55px;
-    height: 55px;
+    width:  40px;
+    top: 0;
+    height: 40px;
 }
 
 #profile{
-    margin-left: 20px;
-    transition: transform .1s;
+    margin-bottom: 10px;
+    transition: transform 0.1s;
 }
 
 #profile:hover{
-    transform: scale(1.1);
+    transform: scale(1.06);
     cursor: pointer;
 }
 
-#user-name{
-    font-size: 20px;
-    color: white;
-    position: relative;
-    float: right;
-    margin-top: 10px;
-}
-
+/* vertical navbar */
 .vertical-nav{
     width: 20px;
     height: 100vh;
@@ -226,3 +236,62 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #205c91; 
   }
+
+@media only screen and (max-width: 1060px){
+    .search-bar{
+        width: 400px;
+        margin-left: 60px;
+        margin-bottom: 10px;
+    }
+    .activity{
+        margin-left: 10px;
+    }
+    .noti{
+        margin-left: 6px;
+    }
+    .app{
+        margin-left: 6px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .search-bar{
+        width: 70%;
+        margin-left: 60px;
+        margin-bottom: 10px;
+    }
+    .nav-text{
+        font-size: 24px;
+    }
+    #avatar{
+        width:  45px;
+        height: 45px;
+    }
+
+    #profile{
+        margin-left: 56px;
+    }
+
+    #user-name{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .activity{
+        margin-left: 60px;
+        margin-bottom: 10px;
+        width: 38px;
+    }
+    .noti{
+        margin-left: 60px;
+        margin-bottom: 10px;
+        width: 38px;
+    }
+    .app{
+        margin-left: 60px;
+        margin-bottom: 10px;
+        width: 38px;
+    }
+    .v1 {
+        display: none;
+    }
+}
