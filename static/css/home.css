@@ -394,5 +394,5 @@ input[type=email], input[type=password], input[type=text] {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #205c91; 
+    background: #2d7ec5; 
   }
