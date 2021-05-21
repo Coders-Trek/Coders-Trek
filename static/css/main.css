@@ -1,8 +1,8 @@
 #list{
     color: white;
-    font-size: 2rem;
-    margin-bottom: 2px;
-    left: -0.5%;
+    font-size: 1.6rem;
+    /* margin-bottom: 2px; */
+    /* left: -0.5%; */
     position: relative;
     padding-left: 5px;
     border-radius: 5px;
@@ -19,6 +19,8 @@
 .search-bar{
     position: relative;
     width: 500px;
+    height: 80%;
+    margin-top: 0.2rem;
     margin-left: 100px;
     top: 4%;
 }
@@ -85,44 +87,56 @@
 
 .activity{
     font-size: 1.6rem;
+    margin-top: 0.09rem;
     color: white;
     margin-left: 20px;
     background-color:#205c91;
     border-radius: 5px;
     padding: 0px 6px;
+    transition: transform .6s;
 }
 
 .activity:hover{
     cursor: pointer;
-    background-color: #1a4c79;
+    transform: rotate(180deg);
+    background-color: #e91e63;
 }
+/* .activity:hover i{
+    transform: rotate(180deg);
+} */
 
 .noti{
     font-size: 1.6rem;
+    margin-top: 0.09rem;
     color: white;
     margin-left: 20px;
     background-color:#205c91;
     border-radius: 5px;
+    transition: transform .4s;
     padding: 0px 6px;
 }
 
 .noti:hover{
+    transform: scale(1.1);
     cursor: pointer;
-    background-color: #1a4c79;
+    background-color: #c33ada;
 }
 
 .app{
+    margin-top: 0.09rem;
     font-size: 1.6rem;
     color: white;
     margin-left: 20px;
     background-color:#205c91;
     border-radius: 5px;
+    transition: transform .6s;
     padding: 0px 6px;
 }
 
 .app:hover{
+    transform: rotate(180deg);
     cursor: pointer;
-    background-color: #1a4c79;
+    background-color: #ff9800;
 }
 
 .v1 {
@@ -136,11 +150,12 @@
     width:  40px;
     top: 0;
     height: 40px;
+
 }
 
 #profile{
-    margin-bottom: 10px;
-    transition: transform 0.1s;
+    margin-bottom: 0px;
+    transition: transform 0.2s;
 }
 
 #profile:hover{
@@ -150,42 +165,48 @@
 
 /* vertical navbar */
 .vertical-nav{
-    width: 20px;
+    width: 50px;
     height: 100vh;
-    border-right: 1px solid rgb(126, 125, 125);
-    position: fixed;
+    border-right: 2px solid #e91e63;
+    background-color: #191927;
+    /* position: fixed; */
     overflow: auto;
 }
 
 .nav-icon{
-    margin-left: 5px;
+    margin-left: 0px;
     margin-top: 30px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 20px;
     float: left;
+    transition: transform .3s;
 }
 
 .nav-head{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Butterfly Kids', cursive;
     font-size: 20px;
     color: white;
+    margin-top: 26px;
+    margin-left: 8px;
+    float: left;
     display: none;
-    position: relative;
-    top: 4%;
-    left: 9%;
 }
 
-.vertical-nav a:link{
-    text-decoration: none;
+.vertical-nav-li{
+    transition: transform 0.2s;
 }
-
-.vertical-nav a:hover{
-    text-decoration: underline white;
+.vertical-nav-li:hover span{
+    color: #e91e63;
+    transform: scale(1.05);
+}
+.vertical-nav-li:hover i{
+    border-bottom: 2px solid #e91e63;
+    transform: rotate(360deg);
 }
 
 .active{
     font-size: 22px;
-    color: #1a4c79;
+    color: #e91e63;
 }
 
 .main{
@@ -241,7 +262,7 @@
     .search-bar{
         width: 400px;
         margin-left: 60px;
-        margin-bottom: 10px;
+        margin-bottom: 1px;
     }
     .activity{
         margin-left: 10px;
