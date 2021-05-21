@@ -40,23 +40,49 @@
     <div class="loader-container">
         <div class="loader"></div>
     </div>
-
+                
     <!--Navbar Horizontal-->
-    <nav id="hnav" class="navbar fixed-top navbar-light" style="background-color: #092742;">
-        <div class="container-fluid justify-content-start">
-            <i id="list" class="bi bi-list"></i>
-            <h3 class="me-5" style="color: white;margin-left:10px;">Coders Trek</h3>
-            <form class="d-flex ms-5" style="position: relative;">
-                <label for="search" class="bi bi-search sspan"></label>
-                <input class="form-control me-2" name="search" id="search" type="search" aria-label="Search">
-            </form>
-            <i class="bi bi-disc-fill ms-3 activity"></i>
-            <i class="bi bi-envelope-open-fill noti"></i>
-            <i class="bi bi-grid-fill app"></i>
-            <div class="v1 me-3"></div>
-            <div id="profile">
-                <img id="avatar" src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Brown'/>
-                <div class="ms-3" id="user-name">Pro Coder</div>
+    <nav id="hnav" class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #092742;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color:white; font-size: 32px;" href="#">
+                <i id="list" class="bi bi-list"></i>
+                Coders Trek
+            </a>
+            <button style="border: none;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span style="color:white; font-size: 32px;" class="bi bi-three-dots-vertical">
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <form class="d-flex search-bar">
+                            <label for="search" class="bi bi-search sspan"></label>
+                            <input class="form-control me-2" name="search" id="search" type="search" aria-label="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <div class="activity">
+                            <i class="bi bi-disc-fill"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="noti">
+                            <i class="bi bi-envelope-open-fill"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="app">
+                            <i class="bi bi-grid-fill"></i>
+                        </div>
+                    </li>
+                </ul>
+                <span class="">
+                    <div id="profile">
+                        <img id="avatar"
+                            src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Brown' />
+                    </div>
+                </span>
             </div>
         </div>
     </nav>
