@@ -64,6 +64,130 @@
     height: 550px;
 }
 
+
+.activity{
+    font-size: 1.3rem;
+    color: white;
+    margin-left: 20px;
+    background-color:#205c91;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.activity:hover{
+    cursor: pointer;
+    background-color: #1a4c79;
+}
+
+.noti{
+    font-size: 1.3rem;
+    color: white;
+    margin-left: 20px;
+    background-color:#205c91;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.noti:hover{
+    cursor: pointer;
+    background-color: #1a4c79;
+}
+
+.app{
+    font-size: 1.3rem;
+    color: white;
+    margin-left: 20px;
+    background-color:#205c91;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.app:hover{
+    cursor: pointer;
+    background-color: #1a4c79;
+}
+
+.v1 {
+    margin-left: 50px;
+    border-left: 2px solid white;
+    height: 40px;
+  }
+
+#avatar{
+    width:  55px;
+    height: 55px;
+}
+
+#profile{
+    margin-left: 20px;
+    transition: transform .1s;
+}
+
+#profile:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#user-name{
+    font-size: 20px;
+    color: white;
+    position: relative;
+    float: right;
+    margin-top: 10px;
+}
+
+.vertical-nav{
+    width: 20px;
+    height: 100vh;
+    border-right: 1px solid rgb(126, 125, 125);
+    position: fixed;
+    overflow: auto;
+}
+
+.nav-icon{
+    margin-left: 5px;
+    margin-top: 30px;
+    color: white;
+    font-size: 1.5rem;
+    float: left;
+}
+
+.nav-head{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+    display: none;
+    position: relative;
+    top: 4%;
+    left: 9%;
+}
+
+.vertical-nav a:link{
+    text-decoration: none;
+}
+
+.vertical-nav a:hover{
+    text-decoration: underline white;
+}
+
+.active{
+    font-size: 22px;
+    color: #1a4c79;
+}
+
+.main{
+    color: white;
+    
+}
+
+.main h4{
+    color: white;
+}
+
+
 @keyframes loader{
     25%{
         color: #2ecc71;
