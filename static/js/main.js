@@ -66,3 +66,85 @@ $("#list").click(function() {
             }
     }
 }); 
+
+
+
+// task completion JS
+var ctx1 = document.getElementById("completion-tasks");
+var task_completion_Chart = new Chart(ctx1, {
+  type: 'bar',
+  data: {
+    labels: ["09", "10", "11", "12"],
+    datasets: [{
+      label: 'Completion Tasks',
+      data: [5, 6, 2, 1],
+      backgroundColor: [
+        '#0e82e7',
+      ],
+      borderColor: [
+        '#0e82e7',
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+  }
+});
+
+// task performance JS
+var ctx2 = document.getElementById("task-performance");
+var task_performance_Chart = new Chart(ctx2, {
+  type: 'doughnut',
+  data: {
+    labels: ["Assigned", "Completed", "Active"],
+    datasets: [{
+      label: 'Task Performace',
+      data: [100, 75, 25],
+      backgroundColor: [
+        '#0e82e7',
+        '#00a28a',
+        '#b76ba3'
+      ],
+      borderColor: [
+        '#0e82e7',
+        '#00a28a',
+        '#b76ba3'
+      ],
+    }]
+  },
+  options: {
+    responsive: true,
+    animations: {
+        radius: {
+          duration: 600,
+          easing: 'linear',
+          loop: (context) => context.active
+        }
+      },
+  }
+});
+
+// leadboard JS
+var ctx3 = document.getElementById("leadboard");
+var leadboard_Chart = new Chart(ctx3, {
+  type: 'bar',
+  data: {
+    labels: ["user", "pro", "coder", "user"],
+    datasets: [{
+      label: 'Leadboard',
+      data: [6, 5, 2, 1],
+      backgroundColor: [
+        '#0e82e7',
+      ],
+      borderColor: [
+        '#0e82e7',
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    indexAxis: 'y',
+  }
+});
