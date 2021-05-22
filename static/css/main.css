@@ -11,6 +11,8 @@
     transition: transform .2s;
 }
 #list:hover{
+    transition-duration: 2200ms;
+    transition-delay: 2200ms;
     cursor: pointer;
     background-color: #123f66;
 }
