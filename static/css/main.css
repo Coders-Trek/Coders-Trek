@@ -169,7 +169,7 @@
     height: 100vh;
     border-right: 2px solid #e91e63;
     background-color: #191927;
-    /* position: fixed; */
+    position: fixed;
     overflow: auto;
 }
 
@@ -318,4 +318,75 @@
     .v1 {
         display: none;
     }
+}
+
+.start-card{
+    background-color: #191927;
+    border-color: rgb(92, 91, 91);
+}
+
+.start-card h5{
+    font-size: x-large;
+    text-align: center;
+}
+
+.start-card p{
+    font-weight: 700;
+    font-size: x-large;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.start-card:hover{
+    cursor: pointer;
+}
+
+.chart-card{
+    background-color:#222230;
+    border-color: rgb(92, 91, 91);
+}
+
+.chart-card h4{
+    text-align: center;
+}
+
+.ongoing-projects-card{
+    background-color:#222230;
+    border-color: rgb(92, 91, 91);
+}
+
+.project-head{
+    font-weight: 900;
+    font-size: larger;
+}
+
+.project-subhead{
+    font-weight: 700;
+    font-size: large;
+}
+
+.project-progress{
+    margin-left: 3vh;
+    font-size: 14px;
+
+}
+
+.task-schedule-card{
+    background-color:#222230;
+    border-color: rgb(92, 91, 91);
+}
+
+.task-schedule-head{
+    font-weight: 900;
+    font-size: larger;
+}
+
+.task-check:checked + .task-label{
+    text-decoration: line-through;
+}
+
+.footer{
+    text-align: center;
+    position: relative;
+    bottom: 0%;
 }
