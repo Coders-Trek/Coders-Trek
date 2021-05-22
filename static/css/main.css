@@ -212,8 +212,11 @@
 .main{
     color: white;
     position: absolute;
-    left: 5%;
-    top: 15%;
+    left: 70px;
+    right: 20px;
+    bottom: 0;
+    height: 100%;
+    top: 12%;
 }
 
 .main h4{
