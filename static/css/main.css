@@ -218,7 +218,7 @@
     left: 70px;
     right: 20px;
     bottom: 0;
-    height: 100%;
+    height: 200%;
     top: 12%;
 }
 
@@ -350,6 +350,7 @@
 .chart-card{
     background-color:#222230;
     border-radius: 12px;
+    overflow: auto;
     /* border-color: rgb(92, 91, 91); */
 }
 
@@ -370,6 +371,7 @@
 }
 
 .project-head{
+    font-family: 'Butterfly Kids', cursive;
     font-weight: 900;
     font-size: larger;
 }
@@ -391,6 +393,7 @@
 }
 
 .task-schedule-head{
+    font-family: 'Butterfly Kids', cursive;
     font-weight: 900;
     font-size: larger;
 }
