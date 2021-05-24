@@ -136,14 +136,14 @@
     <div class="main">
 
         <!--Welcome Heading-->
-        <h4>Hi, Pro Coder</h4>
-        <span>Here’s what’s happening with your Coding Trek today.</span>
+        <h4 style="font-family: 'Yanone Kaffeesatz', sans-serif">Hi, Pro Coder</h4>
+        <span style="font-family: 'Butterfly Kids', cursive;">Here’s what’s happening with your Coding Trek today.</span>
         <br><br><br>
 
         <!--Updates Cards-->
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-sm-3">
-                <div class="card start-card">
+                <div class="card bg-gradient-primary start-card">
                     <div class="card-body">
                         <h5 class="card-title">Projects</h5>
                         <p><i class="fas fa-project-diagram"></i> 12</p>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="card start-card">
+                <div class="card bg-gradient-success start-card">
                     <div class="card-body">
                         <h5 class="card-title">Tasks</h5>
                         <p><i class="fas fa-tasks"></i> 8</p>
@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="card start-card">
+                <div class="card bg-gradient-danger start-card">
                     <div class="card-body">
                         <h5 class="card-title">Notifications</h5>
                         <p><i class="fas fa-bell"></i> 6</p>
@@ -172,8 +172,8 @@
         <!--Charts-->
         <div class="row">
             <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card-fluid">
-                    <div class="card-body chart-card">
+                <div id="my-card-chart" class="card card-fluid">
+                    <div class="card-body chart-card card-outline-primary">
                         <h4 class="card-title mb-4"> Completion Tasks </h4>
                         <div class="chartjs" style="height: 400px">
                             <canvas id="completion-tasks" style="display: block; width: 311px; height: 292px;" width="311" height="292" class="chartjs-render-monitor"></canvas>
@@ -183,7 +183,7 @@
             </div>
             <div class="col-12 col-lg-12 col-xl-4">
                 <div class="card card-fluid">
-                    <div class="card-body chart-card">
+                    <div class="card-body chart-card card-outline-success">
                         <h4 class="card-title mb-4">Task Performance</h4>
                         <div class="chartjs" style="height: 400px">
                             <canvas id="task-performance" style="display: block; width: 311px; height: 292px;" width="311" height="292" class="chartjs-render-monitor"></canvas>
@@ -193,7 +193,7 @@
             </div>
             <div class="col-12 col-lg-12 col-xl-4">
                 <div class="card card-fluid">
-                    <div class="card-body chart-card">
+                    <div class="card-body chart-card card-outline-danger">
                         <h4 class="card-title mb-4">Leadboard</h4>
                         <div class="chartjs" style="height: 400px">
                             <canvas id="leadboard" style="display: block; width: 311px; height: 292px;" width="311" height="292" class="chartjs-render-monitor"></canvas>

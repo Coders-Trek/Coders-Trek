@@ -324,12 +324,13 @@
 }
 
 .start-card{
-    background-color: #191927;
-    border-color: rgb(92, 91, 91);
+    z-index: 50;
+    transition: transform 0.4s;
 }
 
 .start-card h5{
     font-size: x-large;
+    font-family: 'Butterfly Kids', cursive;
     text-align: center;
 }
 
@@ -341,21 +342,31 @@
 }
 
 .start-card:hover{
+    z-index: 52;
+    transform: scale(1.05);
     cursor: pointer;
 }
 
 .chart-card{
     background-color:#222230;
-    border-color: rgb(92, 91, 91);
+    border-radius: 12px;
+    /* border-color: rgb(92, 91, 91); */
 }
 
 .chart-card h4{
     text-align: center;
 }
 
+/* #my-card-chart{ */
+    /* transition: transform 0.4s; */
+/* } */
+
 .ongoing-projects-card{
     background-color:#222230;
-    border-color: rgb(92, 91, 91);
+}
+
+.card-fluid{
+    background: #191927;
 }
 
 .project-head{
@@ -393,3 +404,42 @@
     position: relative;
     bottom: 0%;
 }
+.bg-gradient-primary {
+  background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff)) !important;
+  background: linear-gradient(to right, #da8cff, #9a55ff) !important; }
+
+.bg-gradient-secondary {
+  background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96)) !important;
+  background: linear-gradient(to right, #e7ebf0, #868e96) !important; }
+
+.bg-gradient-success {
+  background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae)) !important;
+  background: linear-gradient(to right, #84d9d2, #07cdae) !important; }
+
+.bg-gradient-info {
+  background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf)) !important;
+  background: linear-gradient(to right, #90caf9, #047edf 99%) !important; }
+
+.bg-gradient-warning {
+  background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#ffd500)) !important;
+  background: linear-gradient(to right, #f6e384, #ffd500) !important; }
+
+.bg-gradient-danger {
+  background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096)) !important;
+  background: linear-gradient(to right, #ffbf96, #fe7096) !important; }
+
+.bg-gradient-light {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e4e4e9)) !important;
+  background: linear-gradient(to bottom, #f4f4f4, #e4e4e9) !important; }
+
+.bg-gradient-dark {
+  background: linear-gradient(89deg, #5e7188, #3e4b5b) !important; }
+
+.card-outline-success {
+border: 1px solid #1bcfb4; }
+.card-outline-primary {
+border: 1px solid #b66dff; }
+.card-outline-warning {
+border: 1px solid #fed713; }
+.card-outline-danger {
+border: 1px solid #fe7c96; }
