@@ -34,15 +34,12 @@ $(".vertical-nav").mouseout(function() {
         }
 }); 
 
-$("#my-card-chart").mouseover(function () {
-  var my_style = `
-    .main:not(#my-card-chart) {
-        opacity: 0.6;
-      }
-    `;
-  document.getElementsByClassName("main").style = my_style;
-  // document.getElementById('my-card-chart').style.transform = "scale(1.05)";
-  // document.getElementById('my-card-chart').style.opacity = "1";
+$(".my-card-chart").mouseover(function () {
+  this.style.cssText = "transform:scale(1.07);";
+});
+
+$(".my-card-chart").mouseout(function () {
+  this.style.cssText = "transform:scale(1);";
 });
 
 $("#list").click(function() {

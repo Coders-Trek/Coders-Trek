@@ -357,9 +357,10 @@
     text-align: center;
 }
 
-/* #my-card-chart{ */
-    /* transition: transform 0.4s; */
-/* } */
+.my-card-chart{
+    overflow: auto;
+    transition: transform 0.4s;
+ }
 
 .ongoing-projects-card{
     background-color:#222230;
