@@ -74,3 +74,35 @@ function showDiv() {
     document.head.appendChild(style);
     document.getElementById('form-login').style.display = "none";
  }
+
+ function showOTP(){
+  closeDiv();
+  var style = document.createElement('style');
+  style.innerHTML = `
+  body > *:not(#form-otp,.navbar) {
+      filter: blur(3px);
+    }
+  `;
+  document.head.appendChild(style);
+  document.getElementById('form-otp').style.backgroundColor = "rgba(0,0,0, 0.7)";
+  document.getElementById('form-otp').style.display = "block";
+  document.getElementById('form-otp').style.position = "absolute";
+  document.getElementById('form-otp').style.top = 0;
+  document.getElementById('form-otp').style.left = "28%";
+  document.getElementById('form-otp').style.justifyContent = "center";
+  document.getElementById('form-otp').style.alignItems = "center";
+  $('html,body').animate({
+      scrollTop: $("#form-otp").offset().top},
+      'slow');
+ }
+
+ function closeDiv3() {
+  var style = document.createElement('style');
+  style.innerHTML = `
+  body > *:not(#form-otp) {
+      filter: blur(0px);
+    }
+  `;
+  document.head.appendChild(style);
+  document.getElementById('form-otp').style.display = "none";
+}
