@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse # For AJAX --> JSON response will be returned for all AJAX calls
 from modules.imp_funcs import mail_sender_function , OTP_generator
-from auth_app.models import RegisterUser
+from auth_app.models import RegisterUser , UnverifiedUser
 from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password, check_password # For password hashing
 
@@ -14,7 +14,7 @@ def login_signup(request):
 def submit_signup_form(request):
     if request.is_ajax() and request.method == 'POST':
         try:
-            RegisterUser.objects.get(email=request.POST.get('email'))
+            RegisterUser.objects.get(email=request.POST.get('signup_email'))
             return JsonResponse({'message' : 'Email already registered'} , status = 200)
         except:
             fname = request.POST.get('fname')
@@ -28,7 +28,12 @@ def submit_signup_form(request):
             request.session['OTP'] = OTP # Storing the generated OTP as a session variable
             request.session['email'] = email # Storing the email as a session variable
 
-            RegisterUser(fname = fname , lname = lname , email = email , password = password , is_verified = False).save()
+            try:
+                UnverifiedUser.objects.get(email=email).delete()
+            except:
+                pass
+            finally:
+                UnverifiedUser(fname = fname , lname = lname , email = email , password = password).save()
             # mail_sender_function(email , str(OTP))
 
             return JsonResponse({} , status = 200)
@@ -37,14 +42,14 @@ def submit_otp_form(request):
     generated_otp = request.session['OTP']
     enterd_otp    = request.POST.get('otp')
     if int(enterd_otp) == int(generated_otp):
-        user = RegisterUser.objects.get(email = request.session['email'])
-        user.is_verified = True
-        user.save()
+        user = UnverifiedUser.objects.get(email = request.session['email'])
+        RegisterUser(fname = user.fname , lname = user.lname , email = user.email , password = user.password).save()
+        UnverifiedUser.objects.get(email = request.session['email']).delete()
         return HttpResponse('logged in successfully!')
     else:
         # login_signup_form
         context = {'message':'Entered OTP is incorrect!'}
-        RegisterUser.objects.filter(email = request.session['email']).delete()
+        UnverifiedUser.objects.get(email = request.session['email']).delete()
         del request.session['email']
         return render(request , 'auth/login_signup.html' , context)
 
@@ -63,18 +68,14 @@ def submit_login_form(request):
             context = {'message' : "Entered Email id not registered"}
             return render(request , 'auth/login_signup.html' , context)
 
-        if user.is_verified:
-            if check_password(request.POST.get('password') , user.password):
-                if request.POST.get('remember_me' , None)  == 'Remember Me':
-                    request.session.set_expiry(0)
-                return HttpResponse("Logged in successfully")
-            else:
-                context = {'message' : "Password doesn't match'"}
-                return render(request , 'auth/login_signup.html' , context)
+        if check_password(request.POST.get('password') , user.password):
+            if request.POST.get('remember_me' , None)  == 'Remember Me':
+                # request.session.set_expiry(0)
+                pass
+            return HttpResponse("Logged in successfully")
         else:
-            context = {'message' : "Email id is not verified"}
+            context = {'message' : "Password doesn't match'"}
             return render(request , 'auth/login_signup.html' , context)
-
 
 def submit_contact_form(request):
     if request.is_ajax() and request.method == 'POST':
