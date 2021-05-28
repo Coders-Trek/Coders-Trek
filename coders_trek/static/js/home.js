@@ -1,3 +1,7 @@
+$(window).on('load', function() {
+  $('#ModalOTP').modal('show');
+});
+
 $("#start").click(function () {
   $('html,body').animate({
     scrollTop: $("#get-start").offset().top
@@ -87,7 +91,9 @@ $('#signup_form').on('submit', function (event) {
   var lname = document.getElementById('lname').value;
   var signup_email = document.getElementById('signup_email').value;
   var signup_password = document.getElementById('signup_password').value;
-
+  document.getElementById("signup_form").reset();
+  closeDiv();
+  document.getElementById("signup-spinner").style.display = "block";
   $.ajaxSetup({
     headers: {
       "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
@@ -106,17 +112,18 @@ $('#signup_form').on('submit', function (event) {
     dataType: 'json',
     success: function (resp) {
       if (resp.message) {
-        alert(resp.message);
         closeDiv();
+        document.getElementById("signup-spinner").style.display = "none";
+        $('#ModalEmail').modal('show');
         return;
       }
-      closeDiv();
+      document.getElementById("signup-spinner").style.display = "none";
       var style = document.createElement('style');
       style.innerHTML = `
-  body > *:not(#form-otp,.navbar) {
-      filter: blur(3px);
-    }
-  `;
+      body > *:not(#form-otp,.navbar) {
+          filter: blur(3px);
+        }
+      `;
       document.head.appendChild(style);
       document.getElementById('form-otp').style.backgroundColor = "rgba(0,0,0, 0.7)";
       document.getElementById('form-otp').style.display = "block";
@@ -147,13 +154,13 @@ function closeDiv3() {
 // contact_form
 $('#contact-form').on('submit', function (event) {
   event.preventDefault();
-  alert("teri aisi ki taisi");
 
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
   var message = document.getElementById('message').value;
 
-  alert(message + 'wow');
+  document.getElementById("contact-spinner").style.display = "block";
+  document.getElementById("contact-form").reset();
 
   $.ajaxSetup({
     headers: {
@@ -171,7 +178,8 @@ $('#contact-form').on('submit', function (event) {
     },
     dataType: 'json',
     success: function (resp) {
-      alert(resp.status_message);
+      $('#ModalContact').modal('show');
+      document.getElementById("contact-spinner").style.display = "none";
     }
   });
 });

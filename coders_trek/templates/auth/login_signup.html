@@ -61,7 +61,6 @@
         </div>
     </nav>
 
-
     <!-- Header Image -->
     <div style="background-color: #001a33;" class="row mt-3 pt-3 align-items-center">
         <div class="col-6 ps-5" style="color: white;">
@@ -81,6 +80,65 @@
         <img class="car-img-2" src="{% static 'images/3.1.png' %}" alt="">
     </div>
     <br><br>
+
+    <!-- Spinner when signup form is submitted -->
+    <div class="spinner-border text-danger" id="signup-spinner" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <!-- Modal for OTP is wrong -->
+    {% if message %}
+        <div class="modal fade" id="ModalOTP" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{message}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="modal fade" id="ModalEmail" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Email Already Registered
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalContact" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Message is sent !
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Welcome Section-->
     <div class="welcome">
@@ -134,9 +192,6 @@
             <div class="col-lg-4 col-sm-12 col-md-6">
                 <div class="cards">
                     <i id="card-icon" class="fas fa-users fa-3x"></i>
-                    {% if message %}
-                    <h3>new {{message}}</h3>
-                    {% endif %}
                     <h3 id="card-head">Team Work</h3>
                     <hr style="color: antiquewhite;">
                     <p id="card-text">Team up with other programmers and help team mates
@@ -241,7 +296,7 @@
             <div class="col-12 d-flex justify-content-lg-center justify-content-xl-start">
                 <form action="" method="POST" id="contact-form">
                     {% csrf_token %}
-                    <h1>Contact US</h1>
+                    <h1>Contact Us</h1>
                     <hr style="color: white;height:5px;">
                     <label for="name"><i class="fas fa-user"></i><strong> Name</strong></label><br>
                     <input type="text" id="name" placeholder="Enter Name" name="name" required>
@@ -259,6 +314,12 @@
                     <br>
                 </form>
             </div>
+        </div>
+    </div>
+     <!-- Spinner when signup form is submitted -->
+     <div class="d-flex justify-content-center">
+        <div class="spinner-border text-danger" id="contact-spinner" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 

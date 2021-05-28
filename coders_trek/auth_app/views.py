@@ -83,7 +83,7 @@ def submit_contact_form(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
 
-        organization_email = "ayush1219223@jmit.ac.in"
+        organization_email = "aadityasinghal1978@gmail.com"
         mail_sender_function(organization_email ,name + '\n' + message + '\n' + email)
         return JsonResponse({'status_message' : 'omg'} , status = 200)
 
