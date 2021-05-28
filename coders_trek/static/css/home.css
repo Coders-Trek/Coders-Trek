@@ -83,6 +83,22 @@ body {
     display: none;
 }
 
+#signup-spinner{
+    position: absolute;
+    z-index: 2;
+    left: 44%;
+    top: 40%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#contact-spinner{
+    display: none;
+}
+
 #form-sign h1{
     text-align: center;
 }
