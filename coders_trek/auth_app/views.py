@@ -4,7 +4,6 @@ from modules.imp_funcs import mail_sender_function , OTP_generator
 from auth_app.models import RegisterUser
 from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password, check_password # For password hashing
-from django.contrib.auth.models import User
 
 # Create your views here.
 def login_signup(request):
@@ -66,6 +65,8 @@ def submit_login_form(request):
 
         if user.is_verified:
             if check_password(request.POST.get('password') , user.password):
+                if request.POST.get('remember_me' , None)  == 'Remember Me':
+                    request.session.set_expiry(0)
                 return HttpResponse("Logged in successfully")
             else:
                 context = {'message' : "Password doesn't match'"}
