@@ -1,3 +1,26 @@
+// Check internet connection and call hasNetwork Function
+window.addEventListener("load", () => {
+  hasNetwork(navigator.onLine);
+
+  window.addEventListener("online", () => {
+    hasNetwork(true);
+  });
+
+  window.addEventListener("offline", () => {
+    hasNetwork(false);
+  });
+});
+
+// Function to show Modal when there is no internet
+function hasNetwork(online) {
+  if (!online) {
+    $('#ModalNet').modal('show');
+  }
+}
+
+
+
+
 $(window).on('load', function() {
   $('#ModalOTP').modal('show');
 });
