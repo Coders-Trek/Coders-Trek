@@ -73,13 +73,16 @@ WSGI_APPLICATION = 'coders_trek.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+from pymongo.mongo_client import MongoClient
+import urllib
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'my_db',
+        'NAME': 'my-db',
     }
 }
+from decouple import config
+MongoClient.HOST = "mongodb+srv://" + config("MONGO_ID") + ":" + urllib.parse.quote(config("PASSWORD")) + "@my-db.aeenn.mongodb.net/my-db?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true"
 
 
 # Password validation

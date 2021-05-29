@@ -34,7 +34,7 @@ def submit_signup_form(request):
                 pass
             finally:
                 UnverifiedUser(fname = fname , lname = lname , email = email , password = password).save()
-            # mail_sender_function(email , str(OTP))
+            mail_sender_function(email , str(OTP))
 
             return JsonResponse({} , status = 200)
 
