@@ -110,7 +110,7 @@ label{
     color: #f5e0e0;
 }
 
-input[type=email], input[type=password], input[type=text] {
+input[type=email], input[type=password], input[type=text], select {
     width: 85%;
     padding: 12px 5px;
     margin: 12px 10px;
