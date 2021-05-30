@@ -21,7 +21,7 @@ function hasNetwork(online) {
 
 
 
-$(window).on('load', function() {
+$(window).on('load', function () {
   $('#ModalOTP').modal('show');
 });
 
@@ -114,6 +114,7 @@ $('#signup_form').on('submit', function (event) {
   var lname = document.getElementById('lname').value;
   var signup_email = document.getElementById('signup_email').value;
   var signup_password = document.getElementById('signup_password').value;
+  var country = document.getElementById('country').value;
   document.getElementById("signup_form").reset();
   closeDiv();
   document.getElementById("signup-spinner").style.display = "block";
@@ -131,6 +132,7 @@ $('#signup_form').on('submit', function (event) {
       'lname': lname,
       'signup_email': signup_email,
       'signup_password': signup_password,
+      'country': country,
     },
     dataType: 'json',
     success: function (resp) {

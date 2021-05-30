@@ -22,9 +22,7 @@ def submit_signup_form(request):
             lname  = request.POST.get('lname')
             email      = request.POST.get('signup_email')
             password   = request.POST.get('signup_password')
-            # country = request.POST.get('country')
-            country = 'India'
-            x = password
+            country = request.POST.get('country')
             password = make_password(password)
 
             OTP = OTP_generator()
@@ -76,7 +74,6 @@ def submit_login_form(request):
                 # request.session.set_expiry(0)
                 pass
             # Here in next line i used (filter) to get object instead of (get) , here filter works perfectly fine becasue email is unique in RegisterUser Model
-            print('wow' , timezone.now())
             RegisterUser.objects.filter(email = email).update(last_login_datetime = timezone.now())
             return HttpResponse("Logged in successfully")
         else:

@@ -88,22 +88,22 @@
 
     <!-- Modal for OTP is wrong -->
     {% if message %}
-        <div class="modal fade" id="ModalOTP" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        {{message}}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+    <div class="modal fade" id="ModalOTP" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{message}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
     {% endif %}
 
     <div class="modal fade" id="ModalEmail" tabindex="-1">
@@ -333,8 +333,8 @@
             </div>
         </div>
     </div>
-     <!-- Spinner when signup form is submitted -->
-     <div class="d-flex justify-content-center">
+    <!-- Spinner when signup form is submitted -->
+    <div class="d-flex justify-content-center">
         <div class="spinner-border text-danger" id="contact-spinner" style="width: 3rem; height: 3rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -362,7 +362,8 @@
             <input type="password" id="signup_password" placeholder="Enter Password" name="signup_password" required>
             <br>
             <label for="signup_country"><i class="fas fa-globe"></i><strong> Country</strong></label><br>
-            <select onfocus='this.size=5;' onblur='this.size=1;'onchange='this.size=1; this.blur();' id="signup_country" name="signup_country" required>
+            <select name='country' id='country' onfocus='this.size=5;' onblur='this.size=1;'
+                onchange='this.size=1; this.blur();' required>
                 <option>select country</option>
                 <option value="AF">Afghanistan</option>
                 <option value="AX">Aland Islands</option>
@@ -618,8 +619,6 @@
                 <option value="ZW">Zimbabwe</option>
             </select>
 
-            <!-- <input type="hidden" name="product_id" value={{product.product_id}}> -->
-            <!-- <button type="submit" class="btn btn-success">Product Details</button> -->
             <button id="signup_button" class="btn btn-success" type="submit"> Sign Up</button>
         </form>
     </div>
