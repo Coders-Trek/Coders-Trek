@@ -25,5 +25,4 @@ def OTP_generator():
     for i in range(size) :
         generate_OTP += corpus[math.floor(random.random() * length)] 
     print("Generated OTP is :" , generate_OTP)
-    return int(generate_OTP)
-
+    return str(generate_OTP)
