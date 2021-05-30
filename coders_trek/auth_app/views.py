@@ -4,6 +4,7 @@ from modules.imp_funcs import mail_sender_function , OTP_generator
 from auth_app.models import RegisterUser , UnverifiedUser
 from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password, check_password # For password hashing
+from django.utils import timezone
 
 # Create your views here.
 def login_signup(request):
@@ -21,6 +22,8 @@ def submit_signup_form(request):
             lname  = request.POST.get('lname')
             email      = request.POST.get('signup_email')
             password   = request.POST.get('signup_password')
+            # country = request.POST.get('country')
+            country = 'India'
             x = password
             password = make_password(password)
 
@@ -33,7 +36,7 @@ def submit_signup_form(request):
             except:
                 pass
             finally:
-                UnverifiedUser(fname = fname , lname = lname , email = email , password = password).save()
+                UnverifiedUser(fname = fname , lname = lname , email = email , password = password , country = country).save()
             mail_sender_function(email , str(OTP))
 
             return JsonResponse({} , status = 200)
@@ -43,7 +46,7 @@ def submit_otp_form(request):
     enterd_otp    = request.POST.get('otp')
     if int(enterd_otp) == int(generated_otp):
         user = UnverifiedUser.objects.get(email = request.session['email'])
-        RegisterUser(fname = user.fname , lname = user.lname , email = user.email , password = user.password).save()
+        RegisterUser(fname = user.fname , lname = user.lname , email = user.email , password = user.password , country = user.country).save()
         UnverifiedUser.objects.get(email = request.session['email']).delete()
         return HttpResponse('logged in successfully!')
     else:
@@ -72,6 +75,9 @@ def submit_login_form(request):
             if request.POST.get('remember_me' , None)  == 'Remember Me':
                 # request.session.set_expiry(0)
                 pass
+            # Here in next line i used (filter) to get object instead of (get) , here filter works perfectly fine becasue email is unique in RegisterUser Model
+            print('wow' , timezone.now())
+            RegisterUser.objects.filter(email = email).update(last_login_datetime = timezone.now())
             return HttpResponse("Logged in successfully")
         else:
             context = {'message' : "Password doesn't match'"}
