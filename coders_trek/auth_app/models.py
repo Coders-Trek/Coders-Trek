@@ -14,4 +14,5 @@ class RegisterUser(models.Model):
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
+    register_datetime = models.DateTimeField(auto_now_add=True)
     last_login_datetime = models.DateTimeField(auto_now_add=True)
