@@ -26,3 +26,32 @@ def OTP_generator():
         generate_OTP += corpus[math.floor(random.random() * length)] 
     print("Generated OTP is :" , generate_OTP)
     return str(generate_OTP)
+
+
+def mock_data_generator():
+    import random
+    dic = {}
+    dic['Projects'] = random.randint(1,10)
+    dic['Tasks'] = random.randint(15,30)
+    dic['Notifications'] = random.randint(40 , 50)
+    labels = [ random.randint(8 , 15)  for i in range(4)]
+    data  = [ random.randint(1 , 9)  for i in range(4)]
+    dic['CompletionTasks'] = {'labels' : labels , 'data' : data}
+    data = [random.randint(25,100) for i in range(3)]
+    dic['TaskPerformance'] = { 'labels' : ['Assigned' , 'Completed' , 'Active' ] , 'data' : data}
+    labels = ['UserA' , 'UserB' , 'UserC' , 'UserD' , 'UserE']
+    data =[random.randint(1 , 6) for i in range(len(labels))]
+    dic['Leaderboard'] = {'labels' : labels , 'data' : data}
+    labels = ['Hackerrank Python Problems' , 'Hackerrank Python Problems' , 'Hackerrank Python Problems' , 'Hackerrank Python Problems' , 'Hackerrank Python Problems']
+    data = [random.randint(60,80) for i in range(len(labels))]
+    dic['ActiveProjects'] = {'labels' : labels , 'data' : data}
+    return dic
+
+# dic = mock_data_generator()
+# for key in dic.keys():
+#     print(key)
+#     print(dic[key])
+#     print()
+#     print('---------')
+#     print()
+
