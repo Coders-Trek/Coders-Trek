@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.http import JsonResponse # For AJAX --> JSON response will be returned for all AJAX calls
 from modules.imp_funcs import mail_sender_function , OTP_generator
 from auth_app.models import RegisterUser , UnverifiedUser
-from django.http import HttpResponse
+from django.http import HttpResponse , HttpResponseRedirect
 from django.contrib.auth.hashers import make_password, check_password # For password hashing
 from django.utils import timezone
-
+from django.urls import reverse
 # Create your views here.
 def login_signup(request):
     context = {}
@@ -75,7 +75,7 @@ def submit_login_form(request):
                 pass
             # Here in next line i used (filter) to get object instead of (get) , here filter works perfectly fine becasue email is unique in RegisterUser Model
             RegisterUser.objects.filter(email = email).update(last_login_datetime = timezone.now())
-            return HttpResponse("Logged in successfully")
+            return HttpResponseRedirect('home_page')
         else:
             context = {'message' : "Password doesn't match'"}
             return render(request , 'auth/login_signup.html' , context)
