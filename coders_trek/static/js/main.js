@@ -172,4 +172,40 @@ $.ajax({
 })
 
 
+//Ongoing Task Delete
+$(document).ready(function() {
+  $("#delete-span").hide();
+});
+
+$(".task-check").on('click', function (event) {
+
+  $("#delete-span").show();
+  
+
+});
+
+// ON clicking yes Button
+
+$("#delete-yes").on('click', function (event) {
+
+  $('html,body').animate({
+    scrollTop: $("body").offset().top
+  },
+    'slow');
+    
+    $("#delete-span").hide();
+  
+
+});
+
+// On Clicking No Button
+$("#delete-no").on('click', function (event) {
+
+    $('.task-check').prop('checked', false);
+
+    $("#delete-span").hide();
+  
+
+});
+
 
