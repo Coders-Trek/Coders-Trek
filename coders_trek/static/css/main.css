@@ -324,6 +324,7 @@
 }
 
 .start-card{
+    height: 100%;
     z-index: 50;
     transition: transform 0.4s;
 }
@@ -401,6 +402,15 @@
 
 .task-check:checked + .task-label{
     text-decoration: line-through;
+}
+
+#delete-span{
+    position: relative;
+    float: right;
+    font-family: 'Butterfly Kids', cursive;
+    font-weight: 700;
+    font-size: large;
+    text-shadow: 6px 6px 10px red;
 }
 
 .footer{
