@@ -42,9 +42,8 @@ def mock_data_generator():
     labels = ['UserA' , 'UserB' , 'UserC' , 'UserD' , 'UserE']
     data =[random.randint(1 , 6) for i in range(len(labels))]
     dic['Leaderboard'] = {'labels' : labels , 'data' : data}
-    labels = ['Hackerrank Python Problems' , 'Hackerrank Python Problems' , 'Hackerrank Python Problems' , 'Hackerrank Python Problems' , 'Hackerrank Python Problems']
-    data = [random.randint(60,80) for i in range(len(labels))]
-    dic['ActiveProjects'] = {'labels' : labels , 'data' : data}
+    dic['ActiveProjects'] = {'Hackerrank Python problems 1' : 78 , 'Hackerrank Python problems 2' : 90 , 'Hackerrank Python problems 3' : 34}
+    dic['OngoingTasks'] = ['5 hackerrank probs[projectA]' , '7 hackerearth probs[project]' , '8 hackerearth probs[project C]']
     return dic
 
 # dic = mock_data_generator()
