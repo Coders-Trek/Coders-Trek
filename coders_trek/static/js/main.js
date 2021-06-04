@@ -75,6 +75,37 @@ $("#list").click(function () {
 });
 
 
+function createNewDivForActiveProjects(project_name, progress, id) {
+  let element = document.createElement('div');
+  element.id = id;
+  element.innerHTML = ` <span class="project-subhead">${project_name}</span><br>
+                        <span class="project-progress">Progress - ${progress}%</span>
+                        <div class="progress" style="height: 2vh;margin-left:3vh;margin-top:2vh;">
+                            <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 64%;"
+                                aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div><br>`;
+  document.getElementById('ActiveProjectsCardsSection').appendChild(element);
+}
+
+function createNewDivForOngoingTasks(task_name, id) {
+  let element = document.createElement('div');
+  element.id = id;
+  element.innerHTML = ` <div class="form-check mb-4">
+                            <input class="form-check-input task-check"
+                                style="background-color: #343438;padding:1.2vh;border-color:white;margin-right:2vh;"
+                                type="checkbox" id="flexCheckDefault">
+                            <label class="form-check-label task-label" for="flexCheckDefault">
+                                ${task_name}
+                            </label>
+                        </div>`
+  document.getElementById('OngoingTasksSection').appendChild(element);
+}
+
+
+function RemoveDiv(id) {
+  document.getElementById(id).remove();
+}
+
 
 function UpdateCharts(resp) {
   // task completion JS
@@ -156,31 +187,46 @@ function UpdateCharts(resp) {
   });
 }
 
-$.ajax({
-  url: "get_dashboard_data",
-  type: 'POST',
-  data: {
-  },
-  success: function (resp) {
-    // Updating values
-    document.getElementById('Projects').innerHTML = resp.data.Projects;
-    document.getElementById('Tasks').innerHTML = resp.data.Tasks;
-    document.getElementById('Notifications').innerHTML = resp.data.Notifications;
-    // Updating charts
-    UpdateCharts(resp);
-  }
-})
+function makeAjaxCallToUpdatePageData() {
+  $.ajax({
+    url: "get_dashboard_data",
+    type: 'POST',
+    data: {
+    },
+    success: function (resp) {
+      // Updating values
+      document.getElementById('Projects').innerHTML = resp.data.Projects;
+      document.getElementById('Tasks').innerHTML = resp.data.Tasks;
+      document.getElementById('Notifications').innerHTML = resp.data.Notifications;
+      // Updating charts
+      UpdateCharts(resp);
 
+      // Adding divisons to ActiveProjectsSection
+      for (var project_name in resp.data.ActiveProjects) {
+        createNewDivForActiveProjects(project_name, resp.data.ActiveProjects[project_name], 'new1');
+      }
+
+      // Adding divisons to OngoingTasksSection
+      for (var i = 0; i < resp.data.OngoingTasks.length; i++) {
+        createNewDivForOngoingTasks(resp.data.OngoingTasks[i], '1');
+      }
+
+
+    }
+  })
+}
+
+makeAjaxCallToUpdatePageData();
 
 //Ongoing Task Delete
-$(document).ready(function() {
+$(document).ready(function () {
   $("#delete-span").hide();
 });
 
 $(".task-check").on('click', function (event) {
 
   $("#delete-span").show();
-  
+
 
 });
 
@@ -192,19 +238,19 @@ $("#delete-yes").on('click', function (event) {
     scrollTop: $("body").offset().top
   },
     'slow');
-    
-    $("#delete-span").hide();
-  
+
+  $("#delete-span").hide();
+
 
 });
 
 // On Clicking No Button
 $("#delete-no").on('click', function (event) {
 
-    $('.task-check').prop('checked', false);
+  $('.task-check').prop('checked', false);
 
-    $("#delete-span").hide();
-  
+  $("#delete-span").hide();
+
 
 });
 
