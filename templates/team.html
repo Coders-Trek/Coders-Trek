@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!--Jquery CDN-->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!--Ajax CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <!--AnimXYZ CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.4.0/dist/animxyz.min.css">
+
+
+    <!--FontAwsome CDN-->
+    <script src="https://kit.fontawesome.com/c23041b8ac.js" crossorigin="anonymous"></script>
+
+    <!--Chart.js CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--CSS Files-->
+    <link rel="stylesheet" href="../static/css/team.css">
+
+    <title>Coders Trek - Team</title>
+
+</head>
+
+<body style="background-color:#191927;">
+
+    <!--Loader-->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!--Navbar Horizontal-->
+    <nav id="hnav" class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #092742;">
+        <div class="container-fluid">
+            <a class="navbar-brand" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i id="list" class="bi bi-list"></i>
+                <span style="color:white; font-size: 22px; top:0">CODERS TREK</span>
+            </a>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-lg-0">
+                    <li class="nav-item">
+                        <form class="d-flex search-bar">
+                            <label for="search" class="bi bi-search sspan"></label>
+                            <input class="form-control me-2" name="search" id="search" type="search"
+                                aria-label="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <div class="activity">
+                            <i class="bi bi-disc-fill"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="noti">
+                            <i class="bi bi-envelope-open-fill"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="app">
+                            <i class="bi bi-grid-fill"></i>
+                        </div>
+                    </li>
+                </ul>
+                <span>
+                    <button type="button" class="btn btn-outline-info me-4" id="logout">Logout</button>
+                </span>
+                <span>
+                    <div id="profile">
+                        <img id="avatar"
+                            src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Brown' />
+                    </div>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <!--Vertical Navbar-->
+    <div class="vertical-nav mt-4">
+        <ul style="margin: 0; padding: 14px;">
+            <li style="display: flex;">
+                <a class="vertical-nav-li" href="#">
+                    <i class="fas fa-home nav-icon"></i>
+                    <span class="nav-head"> Dashboard</span>
+                </a>
+            </li>
+            <li style="display: flex;">
+                <a class="vertical-nav-li" href="#">
+                    <i class="fas fa-users nav-icon active"></i>
+                    <span class="nav-head active"> Teams</span>
+                </a>
+            </li>
+            <li style="display: flex;">
+                <a class="vertical-nav-li" href="#">
+                    <i class="fas fa-tasks nav-icon"></i>
+                    <span class="nav-head"> Tasks</span>
+                </a> <br>
+            </li>
+            <li style="display: flex;">
+                <a class="vertical-nav-li" href="#">
+                    <i class="fas fa-rss nav-icon"></i>
+                    <span class="nav-head"> Feeds</span>
+                </a>
+            </li>
+            <li style="display: flex;">
+                <a class="vertical-nav-li" href="#">
+                    <i class="fas fa-chart-bar nav-icon"></i>
+                    <span class="nav-head"> Analytics</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--Main Content-->
+    <div class="main" id="main-body">
+
+        <!--Welcome Heading-->
+        <h4 style="font-family: 'Yanone Kaffeesatz', sans-serif">Hi, Pro Coder</h4>
+        <span style="font-family: 'Butterfly Kids', cursive;">Here’s All the Trek Teams/Community!!</span>
+
+        <!-- Create Team Division -->
+        <button type="button" id="create-team" class="btn btn-outline-info create-team"><i class="fas fa-users"></i> Create A New Team</button>
+
+        <br><br><br>
+        <!-- Joined Team Cards -->
+        <div class="container joined-team-head">
+            Hey Coder, Your Teams Here !
+        </div>
+        <br><br>
+
+        <div class="row joined-team-card">
+            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
+                <div class="card card-fluid">
+                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <hr>
+                    <div class="card-body">
+                        <h4 class="card-title">Team Name</h4>
+                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <button class="btn btn-outline-info">Manage Team</button>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
+                <div class="card card-fluid">
+                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <hr>
+                    <div class="card-body">
+                        <h4 class="card-title">Team Name</h4>
+                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <button class="btn btn-outline-info">Manage Team</button>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
+                <div class="card card-fluid">
+                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <hr>
+                    <div class="card-body">
+                        <h4 class="card-title">Team Name</h4>
+                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <button class="btn btn-outline-info">Manage Team</button>
+                    </div>
+                </div>        
+            </div>
+        </div>
+
+
+
+        <br><br><br>
+        <!-- All Other Team Cards -->
+        <div class="container all-team-head">
+            Hey Coder, Explore Other Teams Here !
+        </div>
+        <br><br>
+
+        <div class="row all-team-card">
+            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
+                <div class="card card-fluid">
+                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <hr>
+                    <div class="card-body">
+                        <h4 class="card-title">Team Name</h4>
+                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <button class="btn btn-outline-info join-team">Join Team</button>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
+                <div class="card card-fluid">
+                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <hr>
+                    <div class="card-body">
+                        <h4 class="card-title">Team Name</h4>
+                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <button class="btn btn-outline-info join-team">Join Team</button>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
+                <div class="card card-fluid">
+                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <hr>
+                    <div class="card-body">
+                        <h4 class="card-title">Team Name</h4>
+                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <button class="btn btn-outline-info join-team">Join Team</button>
+                    </div>
+                </div>        
+            </div>
+        </div>
+
+        <!-- Modal For Join Team Request -->
+        <div class="modal js-loading-bar">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="progress blue">
+                            <span class="progress-left">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <span class="progress-right">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <div class="progress-value">
+                                Sending Request
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal For Creating New Team -->
+
+        <div class="modal fade" id="ModalTeam" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create Team</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" action="" method="POST" id="create-team-form">
+                            <div class="logoContainer">
+                                <img src="http://img1.wikia.nocookie.net/__cb20130901213905/battlebears/images/9/98/Team-icon-placeholder.png">
+                            </div>
+                            <div class="fileContainer sprite">
+                                <span>choose Image</span>
+                                <input type="file"  value="Choose Image">
+                            </div>
+                            <label for="team-name"><i class="fas fa-users"></i><strong> Team Name</strong></label><br>
+                            <input type="text" id="team-name" placeholder="Enter Team Name" name="team-name" required>
+                            <br>
+                            <label for="des"><i class="fas fa-calendar""></i><strong> Description</strong></label><br>
+                            <textarea name="des" id="des" placeholder="Enter Team Description" cols="40" rows="4"
+                                style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-info">Create</button>
+                        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br><br><br><br><br>
+        <!-- Footer -->
+        <footer class="footer">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">Support</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">Help Center</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">Privacy</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-muted" href="#">Terms of Service</a>
+                </li>
+            </ul>
+            <div class="copyright"> Copyright © 2021. All right reserved. </div>
+        </footer>
+
+    </div>
+
+    <!--JS Files-->
+    <script src="../static/js/loader.js"></script>
+    <script src="../static/js/team.js"></script>
+</body>
+
+</html>
