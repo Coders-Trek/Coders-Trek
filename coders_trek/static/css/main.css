@@ -148,11 +148,17 @@
     height: 50px;
   }
 
+
+#logout{
+    top: 0;
+    position: relative;
+}
+
 /* avatar */
 #avatar{
-    width:  40px;
+    width:  50px;
     top: 0;
-    height: 40px;
+    height: 50px;
 
 }
 
@@ -270,6 +276,9 @@
         margin-left: 60px;
         margin-bottom: 1px;
     }
+    #logout{
+        margin-left: 15px;
+    }
     .activity{
         margin-left: 10px;
     }
@@ -296,6 +305,10 @@
     }
 
     #profile{
+        margin-left: 56px;
+    }
+
+    #logout{
         margin-left: 56px;
     }
 
