@@ -34,14 +34,6 @@ $(".vertical-nav").mouseover(function () {
     }
   });
   
-  $(".my-card-chart").mouseover(function () {
-    this.style.cssText = "transform:scale(1.07);";
-  });
-  
-  $(".my-card-chart").mouseout(function () {
-    this.style.cssText = "transform:scale(1);";
-  });
-  
   $("#list").click(function () {
     var x = document.getElementsByClassName("nav-head");
     var y = document.getElementsByClassName("vertical-nav");
