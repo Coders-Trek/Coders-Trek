@@ -95,6 +95,7 @@ function createNewDivForOngoingTasks(task_name, id) {
                                 onclick="myclicking()"
                                 name = "task-checkbox"
                                 value="${task_name}"
+
                                 style="background-color: #343438;padding:1.2vh;border-color:white;margin-right:2vh;"
                                 type="checkbox" id="${id}">
                             <label class="form-check-label task-label" for= "${id}">
