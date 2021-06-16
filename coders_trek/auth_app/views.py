@@ -77,7 +77,7 @@ def submit_login_form(request):
             RegisterUser.objects.filter(email = email).update(last_login_datetime = timezone.now())
             return HttpResponseRedirect('home_page')
         else:
-            context = {'message' : "Password doesn't match'"}
+            context = {'message' : "Password doesn't match"}
             return render(request , 'auth/login_signup.html' , context)
 
 def submit_contact_form(request):
