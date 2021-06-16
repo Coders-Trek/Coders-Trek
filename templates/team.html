@@ -239,6 +239,29 @@
         </div>
 
         <!-- Modal For Join Team Request -->
+        <div class="modal fade" id="exampleModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Join Team</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="mb-3" method="POST">
+                            <label for="code"><i class="fas fa-key"></i> Enter Code to Join</label>
+                            <input type="text" name="code" id="code" placeholder="Code">
+                            <button type="submit" class="btn btn-outline-info ms-4 mt-2" id="code-submit">Submit</button>
+                        </form>
+                        <p style="text-align: center;font-family:'Butterfly Kids', cursive;">OR</p>
+                        <button class="btn btn-outline-info ms-3" id="send-request">Send A Request</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal js-loading-bar">
             <div class="modal-dialog">
                 <div class="modal-content">
