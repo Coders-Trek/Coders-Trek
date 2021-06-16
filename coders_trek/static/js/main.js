@@ -92,9 +92,10 @@ function createNewDivForOngoingTasks(task_name, id) {
   element.id = id;
   element.innerHTML = ` <div class="form-check mb-4">
                             <input class="form-check-input task-check"
+                                onclick="myclicking()"
                                 style="background-color: #343438;padding:1.2vh;border-color:white;margin-right:2vh;"
-                                type="checkbox" id="flexCheckDefault">
-                            <label class="form-check-label task-label" for="flexCheckDefault">
+                                type="checkbox" id="${id}">
+                            <label class="form-check-label task-label" for= "${id}">
                                 ${task_name}
                             </label>
                         </div>`
@@ -208,10 +209,8 @@ function makeAjaxCallToUpdatePageData() {
 
       // Adding divisons to OngoingTasksSection
       for (var i = 0; i < resp.data.OngoingTasks.length; i++) {
-        createNewDivForOngoingTasks(resp.data.OngoingTasks[i], '1');
+        createNewDivForOngoingTasks(resp.data.OngoingTasks[i], resp.data.OngoingTasks[i] + '1');
       }
-
-
     }
   })
 }
@@ -221,13 +220,6 @@ makeAjaxCallToUpdatePageData();
 //Ongoing Task Delete
 $(document).ready(function () {
   $("#delete-span").hide();
-});
-
-$(".task-check").on('click', function (event) {
-
-  $("#delete-span").show();
-
-
 });
 
 // ON clicking yes Button
@@ -255,3 +247,6 @@ $("#delete-no").on('click', function (event) {
 });
 
 
+function myclicking() {
+  $("#delete-span").show();
+}
