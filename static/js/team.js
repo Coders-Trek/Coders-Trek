@@ -70,6 +70,13 @@ $(".vertical-nav").mouseover(function () {
 // Animation For Modal Progress Bar
 
 $('.join-team').click(function() {
+  var $modal = $('#exampleModal')
+  
+  $modal.modal('show');
+});
+
+$('#send-request').click(function() {
+  $('#exampleModal').modal('hide');
   var $modal = $('.js-loading-bar'),
       $bar = $modal.find('.progress');
   
