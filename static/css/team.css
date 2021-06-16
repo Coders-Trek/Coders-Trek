@@ -441,7 +441,7 @@
     left: 5%;
 }
 .progress.blue .progress-bar{
-    border-color: #063a5a;
+    border-color: #2492d6;
 }
 .progress.blue .progress-left .progress-bar{
     animation: loading-2 3.5s linear 3.5s forwards;
@@ -492,6 +492,14 @@ input[type=text], select {
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 10px;
+}
+
+#exampleModal .modal-content{
+    background-color: rgba(27, 27, 27, 0.9);
+}
+
+.js-loading-bar .modal-content{
+    background-color: rgba(27, 27, 27, 0.9);
 }
 
 .logoContainer{
