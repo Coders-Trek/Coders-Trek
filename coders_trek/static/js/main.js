@@ -1,3 +1,7 @@
+var task_completion_Chart;
+var task_performance_Chart;
+var leadboard_chart;
+
 $(".vertical-nav").mouseover(function () {
   var x = document.getElementsByClassName("nav-head");
   var y = document.getElementsByClassName("vertical-nav");
@@ -107,14 +111,15 @@ function createNewDivForOngoingTasks(task_name, id) {
 
 
 function RemoveDiv(id) {
+  alert('uuuuu' + id);
   document.getElementById(id).remove();
 }
 
 
-function UpdateCharts(resp) {
+function CreateCharts(resp) {
   // task completion JS
   var ctx1 = document.getElementById("completion-tasks");
-  var task_completion_Chart = new Chart(ctx1, {
+  task_completion_Chart = new Chart(ctx1, {
     type: 'bar',
     data: {
       labels: resp.data.CompletionTasks.labels,
@@ -136,7 +141,7 @@ function UpdateCharts(resp) {
   });
   // task performance JS
   var ctx2 = document.getElementById("task-performance");
-  var task_performance_Chart = new Chart(ctx2, {
+  task_performance_Chart = new Chart(ctx2, {
     type: 'doughnut',
     data: {
       labels: resp.data.TaskPerformance.labels,
@@ -168,7 +173,7 @@ function UpdateCharts(resp) {
   });
   // leadboard JS
   var ctx3 = document.getElementById("leadboard");
-  var leadboard_Chart = new Chart(ctx3, {
+  leadboard_Chart = new Chart(ctx3, {
     type: 'bar',
     data: {
       labels: resp.data.Leaderboard.labels,
@@ -191,6 +196,18 @@ function UpdateCharts(resp) {
   });
 }
 
+function UpdateCharts(resp) {
+  task_completion_Chart.data.labels = resp.data.CompletionTasks.labels;
+  task_completion_Chart.data.datasets[0].data = resp.data.CompletionTasks.data;
+  task_performance_Chart.data.labels = resp.data.TaskPerformance.labels;
+  task_performance_Chart.data.datasets[0].data = resp.data.TaskPerformance.data;
+  leadboard_Chart.data.labels = resp.data.Leaderboard.labels;
+  leadboard_Chart.data.datasets[0].data = resp.data.Leaderboard.data;
+  task_completion_Chart.update();
+  task_performance_Chart.update();
+  leadboard_Chart.update()
+}
+
 function makeAjaxCallToUpdatePageData() {
   $.ajax({
     url: "get_dashboard_data",
@@ -202,18 +219,45 @@ function makeAjaxCallToUpdatePageData() {
       document.getElementById('Projects').innerHTML = resp.data.Projects;
       document.getElementById('Tasks').innerHTML = resp.data.Tasks;
       document.getElementById('Notifications').innerHTML = resp.data.Notifications;
-      // Updating charts
-      UpdateCharts(resp);
+      // Creating charts
+      CreateCharts(resp);
 
       // Adding divisons to ActiveProjectsSection
       for (var project_name in resp.data.ActiveProjects) {
-        createNewDivForActiveProjects(project_name, resp.data.ActiveProjects[project_name], 'new1');
+        createNewDivForActiveProjects(project_name, resp.data.ActiveProjects[project_name], project_name);
       }
 
       // Adding divisons to OngoingTasksSection
       for (var i = 0; i < resp.data.OngoingTasks.length; i++) {
-        createNewDivForOngoingTasks(resp.data.OngoingTasks[i], resp.data.OngoingTasks[i] + '1');
+        createNewDivForOngoingTasks(resp.data.OngoingTasks[i], resp.data.OngoingTasks[i]);
       }
+
+    }
+  })
+}
+
+function DeleteOngoingTasks(task_list) {
+  alert('hurrah' + task_list);
+  for (var i = 0; i < task_list.length; i++) {
+    alert(task_list[i]);
+    RemoveDiv(task_list[i]);
+  }
+
+  // AJAX call to remove Ongoing tasks from the database
+  $.ajax({
+    url: "delete_ongoing_tasks",
+    type: 'POST',
+    data: {
+      'task_list': task_list,
+    },
+    success: function (resp) {
+      // Updating values
+      document.getElementById('Projects').innerHTML = resp.data.Projects;
+      document.getElementById('Tasks').innerHTML = resp.data.Tasks;
+      document.getElementById('Notifications').innerHTML = resp.data.Notifications;
+
+      // Updating charts
+      UpdateCharts(resp);
     }
   })
 }
@@ -230,10 +274,13 @@ $(document).ready(function () {
 $("#delete-yes").on('click', function (event) {
 
   let task_completed = [];
-  $.each($("input[name='task-checkbox']:checked"), function(){
-      task_completed.push($(this).val());
-    });
+  $.each($("input[name='task-checkbox']:checked"), function () {
+    task_completed.push($(this).val());
+  });
   alert("Tasks are: " + task_completed);
+
+  // Deleting Completed tasks divisons
+  DeleteOngoingTasks(task_completed);
 
   $('html,body').animate({
     scrollTop: $("body").offset().top
