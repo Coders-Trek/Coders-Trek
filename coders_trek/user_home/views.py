@@ -14,3 +14,11 @@ def get_dashboard_data(request):
         context = mock_data_generator()
         print(context)
         return JsonResponse({'data' : context} , status = 200)
+
+@csrf_exempt
+def delete_ongoing_tasks(request):
+    if request.is_ajax():
+        print(request.POST)
+        context = mock_data_generator()
+        print(context)
+        return JsonResponse({'data' : context} , status = 200)
