@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +42,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!--CSS Files-->
-    <link rel="stylesheet" href="../static/css/team.css">
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
 
     <title>Coders Trek - Team</title>
 
@@ -107,7 +108,7 @@
     <div class="vertical-nav mt-4">
         <ul style="margin: 0; padding: 14px;">
             <li style="display: flex;">
-                <a class="vertical-nav-li" href="#">
+                <a class="vertical-nav-li" href="{% url 'user_home:home_page' %}">
                     <i class="fas fa-home nav-icon"></i>
                     <span class="nav-head"> Dashboard</span>
                 </a>
@@ -159,39 +160,19 @@
         <br><br>
 
         <div class="row joined-team-card">
+            {% for team in teams %}
             <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
                 <div class="card card-fluid">
-                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <img src="data:image/png;base64, {{team.image}}" class="card-img-top" alt="team-image">
                     <hr>
                     <div class="card-body">
-                        <h4 class="card-title">Team Name</h4>
-                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
+                        <h4 class="card-title">{{team.name}}</h4>
+                        <p class="card-text">{{team.description}}</p>
                         <button class="btn btn-outline-info">Manage Team</button>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
-                <div class="card card-fluid">
-                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
-                    <hr>
-                    <div class="card-body">
-                        <h4 class="card-title">Team Name</h4>
-                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
-                        <button class="btn btn-outline-info">Manage Team</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
-                <div class="card card-fluid">
-                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
-                    <hr>
-                    <div class="card-body">
-                        <h4 class="card-title">Team Name</h4>
-                        <p class="card-text">Team Description Here. What does your team do and other inp info</p>
-                        <button class="btn btn-outline-info">Manage Team</button>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
 
@@ -206,7 +187,7 @@
         <div class="row all-team-card">
             <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
                 <div class="card card-fluid">
-                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <img src="{% static 'images/1.png' %}" class="card-img-top" alt="team-image">
                     <hr>
                     <div class="card-body">
                         <h4 class="card-title">Team Name</h4>
@@ -217,7 +198,7 @@
             </div>
             <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
                 <div class="card card-fluid">
-                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <img src="{% static 'images/1.png' %}" class="card-img-top" alt="team-image">
                     <hr>
                     <div class="card-body">
                         <h4 class="card-title">Team Name</h4>
@@ -228,7 +209,7 @@
             </div>
             <div class="col-12 col-lg-4 col-xl-4 col-md-6 col-sm-6 mt-1">
                 <div class="card card-fluid">
-                    <img src="../coders_trek/static/images/1.png" class="card-img-top" alt="team-image">
+                    <img src="{% static 'images/1.png' %}" class="card-img-top" alt="team-image">
                     <hr>
                     <div class="card-body">
                         <h4 class="card-title">Team Name</h4>
@@ -294,27 +275,31 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="needs-validation" action="" method="POST" id="create-team-form">
+                        <form enctype="multipart/form-data" class="needs-validation" action="/create_new_team"
+                            method="POST" id="create-team-form">
+                            {% csrf_token %}
                             <div class="logoContainer">
                                 <img
                                     src="http://img1.wikia.nocookie.net/__cb20130901213905/battlebears/images/9/98/Team-icon-placeholder.png">
                             </div>
                             <div class="fileContainer sprite">
                                 <span>choose Image</span>
-                                <input type="file" value="Choose Image">
+                                <input type="file" value="Choose Image" name='image'>
                             </div>
                             <label for="team-name"><i class="fas fa-users"></i><strong> Team Name</strong></label><br>
-                            <input type="text" id="team-name" placeholder="Enter Team Name" name="team-name" required>
+                            <input type="text" id="team-name" placeholder="Enter Team Name" name="team_name" required>
                             <br>
                             <label for="des"><i class="fas fa-calendar""></i><strong> Description</strong></label><br>
-                            <textarea name=" des" id="des" placeholder="Enter Team Description" cols="40" rows="4"
-                                    style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
+                            <textarea id=" des" name='description' placeholder="Enter Team Description" cols="40"
+                                    rows="4" style="margin-left: 20px;border-radius:10px;margin-top:8px;"></textarea>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-outline-info">Create</button>
+                                        <button type="button" class="btn btn-outline-warning"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                    </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-info">Create</button>
-                        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Cancel</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -343,8 +328,8 @@
     </div>
 
     <!--JS Files-->
-    <script src="../static/js/loader.js"></script>
-    <script src="../static/js/team.js"></script>
+    <script src="{% static 'js/loader.js' %}"></script>
+    <script src="{% static 'js/team.js' %}"></script>
 </body>
 
 </html>
