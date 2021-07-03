@@ -46,7 +46,7 @@ def submit_otp_form(request):
         user = UnverifiedUser.objects.get(email = request.session['email'])
         RegisterUser(fname = user.fname , lname = user.lname , email = user.email , password = user.password , country = user.country).save()
         UnverifiedUser.objects.get(email = request.session['email']).delete()
-        return HttpResponse('logged in successfully!')
+        return HttpResponseRedirect('home_page')
     else:
         # login_signup_form
         context = {'message':'Entered OTP is incorrect!'}
